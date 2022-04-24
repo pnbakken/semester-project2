@@ -4,4 +4,26 @@
     background-position: center;
     height: 90vh;
     width: 100%;
+    position: relative;
+
+    @media(max-width: 768px) {
+        height: 80vh;
+    }
+
+
+    .jumbo-link {
+        position: absolute;
+        top: 40%;
+        right: 20%;
+        background: $color-rich-black-transparent;
+        width: fit-content;
+        padding: 3%;
+        text-align: center;
+        border-radius: 0.25rem;
+
+        @media(max-width: 768px) {
+            right: 10%;
+            
+        }
+    }
 }

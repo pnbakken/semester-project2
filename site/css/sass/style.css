@@ -1,7 +1,22 @@
+.jumbo-link {
+  color: #fff;
+  text-decoration: none;
+}
+
+.jumbo-link:hover {
+  color: #fff;
+}
+
 body {
   display: grid;
   grid-template-rows: auto 1fr auto;
   min-height: 100vh;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 .jumbotron {
@@ -10,6 +25,27 @@ body {
   background-position: center;
   height: 90vh;
   width: 100%;
+  position: relative;
+}
+@media (max-width: 768px) {
+  .jumbotron {
+    height: 80vh;
+  }
+}
+.jumbotron .jumbo-link {
+  position: absolute;
+  top: 40%;
+  right: 20%;
+  background: #0319271f;
+  width: fit-content;
+  padding: 3%;
+  text-align: center;
+  border-radius: 0.25rem;
+}
+@media (max-width: 768px) {
+  .jumbotron .jumbo-link {
+    right: 10%;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
