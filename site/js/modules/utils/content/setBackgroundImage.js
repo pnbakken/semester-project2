@@ -1,3 +1,3 @@
 export default function setBackgroundImage(imageURL, target) {
-    target.style = `background:url("${imageURL}");`;
+    target.style = `background-image:url("${imageURL}");`;
 }

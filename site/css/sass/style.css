@@ -20,17 +20,11 @@ body {
 }
 
 .jumbotron {
-  background: url("../../../../../assets/images/hero-image.jpg.jpg");
   background-size: cover;
   background-position: center;
   height: 90vh;
   width: 100%;
   position: relative;
-}
-@media (max-width: 768px) {
-  .jumbotron {
-    height: 80vh;
-  }
 }
 .jumbotron .jumbo-link {
   position: absolute;
