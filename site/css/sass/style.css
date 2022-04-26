@@ -42,4 +42,22 @@ body {
   }
 }
 
+.products-container {
+  width: 100%;
+}
+.products-container .product-list-item {
+  display: flex;
+  flex-direction: column;
+}
+.products-container .product-list-item .product-header {
+  height: 100px;
+  width: 100px;
+}
+.products-container .product-list-item .product-header .product-image {
+  height: 80%;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
 /*# sourceMappingURL=style.css.map */

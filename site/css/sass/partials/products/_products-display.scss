@@ -1,0 +1,20 @@
+.products-container {
+    width: 100%;
+
+    .product-list-item {
+        display: flex;
+        flex-direction: column;
+
+        .product-header {
+            height: 100px;
+            width: 100px;
+
+            .product-image {
+                height: 80%;
+                width: 100%;
+                background-size: cover;
+                background-position: center;
+            }
+        }
+    }
+}

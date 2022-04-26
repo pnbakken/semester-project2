@@ -1,5 +1,5 @@
-import getAllProducts from "../../utils/content/getAllProducts.js";
-import unpackProductDetails from "../../utils/content/unpackProductDetails.js";
+import getAllProducts from "../../utils/content/products/getAllProducts.js";
+import { baseURL } from "../../utils/settings/baseUrl.js";
 
 export default async function productDisplay() {
     const container = document.querySelector(".products-container");
@@ -12,15 +12,25 @@ export default async function productDisplay() {
 
 function buildProductDisplay(products, target) {
     products.forEach( (product) => {
-       target.innrHTML += renderProduct(unpackProductDetails(product));
+       target.innerHTML += renderProduct(product);
     })
 }
 
 function renderProduct(product) {
+    const details = unpackProductDetails(product);
     return `<div class="product-list-item">
-    <div class="product-header">
-        <div class="product-image"></div>
-        <h4 class="product-name">
-    </div>
-</div>`;
+                <div class="product-header">
+                    <div class="product-image" style="background-image:url('${details.image}');"></div>
+                    <h4 class="product-name">${details.title}</h4>
+                </div>
+            </div>`;
+
+    function unpackProductDetails(product) {
+        return {
+            id: product.id,
+            title: product.title,
+            price: product.price,
+            image: baseURL + product.image.formats.thumbnail.url,
+        }
+    }                 
 }
