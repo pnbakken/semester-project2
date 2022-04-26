@@ -1,5 +1,5 @@
-import jumbotron from "../components/jumbotron.js";
+import heroBanner from "../components/heroBanner.js";
 
 (function index() {
-    jumbotron();
+    heroBanner();
 })();

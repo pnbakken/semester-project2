@@ -19,14 +19,14 @@ body {
   box-sizing: border-box;
 }
 
-.jumbotron {
+.hero-banner {
   background-size: cover;
   background-position: center;
   height: 90vh;
   width: 100%;
   position: relative;
 }
-.jumbotron .jumbo-link {
+.hero-banner .banner-link {
   position: absolute;
   top: 40%;
   right: 20%;
@@ -37,7 +37,7 @@ body {
   border-radius: 0.25rem;
 }
 @media (max-width: 768px) {
-  .jumbotron .jumbo-link {
+  .hero-banner .banner-link {
     right: 10%;
   }
 }
