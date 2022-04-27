@@ -1,4 +1,4 @@
-import { getFromLocal } from "../../utils/settings/storage.js";
+import { getFromLocal } from "../../utils/storage/storage.js";
 
 export default (function checkLogin() {
     const user = getFromLocal("user");
