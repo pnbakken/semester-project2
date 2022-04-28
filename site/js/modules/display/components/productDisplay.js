@@ -25,12 +25,14 @@ function renderProduct(product) {
                 </div>
             </div>`;
 
-    function unpackProductDetails(product) {
-        return {
-            id: product.id,
-            title: product.title,
-            price: product.price,
-            image: baseURL + product.image.formats.thumbnail.url,
-        }
-    }                 
+             
 }
+
+export function unpackProductDetails(product) {
+    return {
+        id: product.id,
+        title: product.title,
+        price: product.price,
+        image: baseURL + product.image.formats.thumbnail.url,
+    }
+}        
