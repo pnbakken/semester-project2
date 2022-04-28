@@ -1,5 +1,5 @@
 import setBackgroundImage from "../../utils/content/setBackgroundImage.js";
-import { baseURL } from "../../utils/settings/baseUrl.js";
+import { baseURL } from "../../utils/network/baseUrl.js";
 import fetchData from "../../utils/network/fetchData.js";
 
 export default async function heroBanner() {
