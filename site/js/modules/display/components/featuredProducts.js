@@ -21,13 +21,13 @@ function displayFeaturedProducts(featuredProducts, target) {
     console.log(target);
     if (featuredProducts) {
         target.innerHTML = "";
-        featuredProducts.forEach( (product) => target.innerHTML += renderFeaturedProduct(product));
+        featuredProducts.forEach( (product) => target.innerHTML += featuredProductToHTML(product));
     }
 
-    function renderFeaturedProduct(product) {
+    function featuredProductToHTML(product) {
         const featuredProduct = unpackProductDetails(product);
 
-        return `<a href="./one-product.html?product_id=${featuredProduct.id}" class="featured-product-wrapper">
+        return `<a href="./pages/one-product.html?product_id=${featuredProduct.id}" class="featured-product-wrapper">
                     <div class="featured-product">
                         <div class="product-image featured-product-image" style="background-image:url('${featuredProduct.image}');"></div>
                         <p class="product-title featured-product-title">${featuredProduct.title}</p>

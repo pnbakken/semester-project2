@@ -12,11 +12,11 @@ export default async function productDisplay() {
 
 function buildProductDisplay(products, target) {
     products.forEach( (product) => {
-       target.innerHTML += renderProduct(product);
+       target.innerHTML += productToHTML(product);
     })
 }
 
-function renderProduct(product) {
+function productToHTML(product) {
     const details = unpackProductDetails(product);
     return `<div class="product-list-item">
                 <div class="product-header">
@@ -33,6 +33,8 @@ export function unpackProductDetails(product) {
         id: product.id,
         title: product.title,
         price: product.price,
+        description : product.description,
         image: baseURL + product.image.formats.thumbnail.url,
+        featured: product.featured,
     }
 }        
