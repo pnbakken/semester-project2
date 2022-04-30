@@ -13,31 +13,19 @@ function createList(products) {
     buildTable(products, productListContainer);
     
     function buildTable(products, target) {
-        target.innerHTML += `<table id="product-table">
-                                <tr class="top-row">
-                                    <th>List of all Products</th>
-                                    <th>Product ID</th>
-                                    <th>Title</th>
-                                    <th>Price</th>
-                                    <th>Is featured</th>
-                                    <th>Description</th>
-                                </tr>`;
+        target.innerHTML = "";
 
         products.forEach((product) => {
-           target.innerHTML += buildTableRow(unpackProductDetails(product), target);
+           buildTableRow(unpackProductDetails(product), target);
         });
-
         
 
         function buildTableRow(product, target) {
             const featured = product.featured ? "Featured" : "Not Featured";
-            return `<tr>
-                        <td>.</td>
-                        <td>${product.id}</td>
-                        <td>${product.title}</td>
-                        <td>${product.price}</td>
-                        <td>${featured}</td>
-                    </tr>`;
+            target.innerHTML += `<div class="product-line">
+                                    <a href="./product-manager.html?product_id=${product.id}">${product.title}</a>
+                                    ${product.id}
+                                    ${product.price}`;
         }
     }
 }
