@@ -2,6 +2,7 @@ import checkLogin from "../utils/checkLogin.js";
 import getOneProduct from "../../utils/content/products/getOneProduct.js";
 import { unpackProductDetails } from "../../display/components/productDisplay.js";
 import setBackgroundImage from "../../utils/content/setBackgroundImage.js";
+import newProduct from "../product-management/newProduct.js";
 
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
@@ -42,6 +43,12 @@ async function displayEditProduct(id) {
     }
 }
 
-function attachNewProductListener() {
+function attachProductListener(editing) {
+
+    if (editing) {
+        
+    } else {
+        newProduct();
+    }
 
 }
