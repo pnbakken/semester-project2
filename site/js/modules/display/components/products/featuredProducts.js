@@ -1,4 +1,4 @@
-import getAllProducts from "../../utils/content/products/getAllProducts.js";
+import getAllProducts from "../../../utils/content/products/getAllProducts.js";
 import { unpackProductDetails } from "./productDisplay.js";
 
 export default async function featuredProducts() {

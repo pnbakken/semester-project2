@@ -1,5 +1,5 @@
-import getAllProducts from "../../utils/content/products/getAllProducts.js";
-import { baseURL } from "../../utils/network/baseUrl.js";
+import getAllProducts from "../../../utils/content/products/getAllProducts.js";
+import { baseURL } from "../../../utils/network/baseUrl.js";
 
 export default async function productDisplay() {
     const container = document.querySelector(".products-container");
