@@ -1,4 +1,4 @@
-import singleProduct from "../components/singleProduct.js";
+import singleProduct from "../components/products/singleProduct.js";
 
 const queryString = location.search;
 const searchParams = new URLSearchParams(queryString);

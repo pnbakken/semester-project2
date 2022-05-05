@@ -1,4 +1,4 @@
-import productDisplay from "../components/productDisplay.js";
+import productDisplay from "../components/products/productDisplay.js";
 
 (function products() {
     productDisplay();
