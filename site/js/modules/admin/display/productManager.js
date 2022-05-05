@@ -1,6 +1,6 @@
 import checkLogin from "../utils/checkLogin.js";
 import getOneProduct from "../../utils/content/products/getOneProduct.js";
-import { unpackProductDetails } from "../../display/components/productDisplay.js";
+import { unpackProductDetails } from "../../display/components/products/productDisplay.js";
 import setBackgroundImage from "../../utils/content/setBackgroundImage.js";
 import newProduct from "../product-management/newProduct.js";
 

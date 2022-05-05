@@ -1,4 +1,4 @@
-import { unpackProductDetails } from "../../display/components/productDisplay.js";
+import { unpackProductDetails } from "../../display/components/products/productDisplay.js";
 import getAllProducts from "../../utils/content/products/getAllProducts.js";
 
 export default async function adminProductList() {
