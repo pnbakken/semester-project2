@@ -1,14 +1,23 @@
 import { getStoredCart } from "../../../utils/content/cart/cartHandler.js";
 
-export default function displayCart() {
+(function displayCart() {
     const cart = getStoredCart();
+    const cartContainer = document.querySelector(".cart-display-container");
     if (cart) {
-        displayCart(cart);
+        cartContainer.innerHTML = generateCartHTML(cart);
     } else {
         //Display message
     }
-}
+})();
 
-function displayCart(cart) {
-    console.log(cart);
+function generateCartHTML(cart) {
+
+    let cartString = "";
+
+    cart.forEach( (item) => {
+        
+        cartString += `<p>${item}</p>`;
+    })
+    
+    return cartString;
 }

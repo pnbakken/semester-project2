@@ -4,7 +4,7 @@ const queryString = location.search;
 const searchParams = new URLSearchParams(queryString);
 const productWrapper = document.querySelector(".product-wrapper");
 
-attachCart();
+
 
 let id;
 if (searchParams.has("product_id")) {
@@ -14,5 +14,6 @@ if (searchParams.has("product_id")) {
 
 if (id) {
     singleProduct(id, productWrapper);
+    attachCart();
 }
 
