@@ -32,6 +32,7 @@ function displayFeaturedProducts(featuredProducts, target) {
                         <div class="product-image featured-product-image" style="background-image:url('${featuredProduct.image}');"></div>
                         <p class="product-title featured-product-title">${featuredProduct.title}</p>
                         <p class="product-price featured-product-price">${featuredProduct.price}</p>
+                        <a class="product-button button-link" href="./pages/one-product.html?product_id=${featuredProduct.id}">View</a>
                     </div>
                 </a>`; 
     }

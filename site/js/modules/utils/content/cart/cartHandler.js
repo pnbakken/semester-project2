@@ -1,24 +1,42 @@
-import { getFromLocal, saveToLocal } from "../../storage/storage";
+import { getFromLocal, removeStorageItem, saveToLocal } from "../../storage/storage.js";
 
-export default function cartHandler(item) {
-    const inCart = checkCart(item);
+
+
+
+export default function cartHandler(itemID) {
+    
+    const inCart = checkCart(itemID);
+    
 
     if (inCart) {
-        removeFromCart(item);
+        removeFromCart(itemID);
         return false;
     } else {
-        addToCart(item);
+        
+        addToCart(itemID);
         return true;
     }
 }
 
-function checkCart(item) {
+export function attachCart() {
+    const cartButtons = document.querySelectorAll(".cart-button");
+    cartButtons.forEach( (button) => {
+        button.addEventListener("click", (event) => {
+            event.preventDefault();
+            cartHandler(button.dataset.id);
+            console.log("added " + button.dataset.id);
+        });
+    });
+    console.log("cart attached");
+}
+
+function checkCart(itemID) {
     const cart = getStoredCart();
     
     let check = false;
     if (cart) {
         cart.forEach( (cartItem) => {
-            if (item.id === cartItem.id) {
+            if (itemID === cartItem) {
                 check = true;
             }
         })
@@ -38,7 +56,7 @@ function addToCart(item) {
 }
 
 function removeFromCart(item) {
-    let newCart = getStoredCart().filter((cartItem) => cartItem.id !== item.id);
+    let newCart = getStoredCart().filter((cartItem) => cartItem !== item);
     storeCart(newCart);
 }
 
@@ -47,5 +65,10 @@ export function getStoredCart() {
 }
 
 function storeCart(cart) {
-    saveToLocal("cart", cart);
+    if (cart.length <= 0) {
+        removeStorageItem("cart");
+    } else {
+        saveToLocal("cart", cart);
+    }
+    
 }

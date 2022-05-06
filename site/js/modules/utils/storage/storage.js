@@ -13,7 +13,7 @@ export function getFromLocal(key) {
     } else return null;
 }
 
-export function clearItem(key) {
+export function removeStorageItem(key) {
     storage.removeItem(key);
 }
 

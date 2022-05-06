@@ -1,8 +1,10 @@
 import singleProduct from "../components/products/singleProduct.js";
-
+import { attachCart } from "../../utils/content/cart/cartHandler.js";
 const queryString = location.search;
 const searchParams = new URLSearchParams(queryString);
 const productWrapper = document.querySelector(".product-wrapper");
+
+attachCart();
 
 let id;
 if (searchParams.has("product_id")) {

@@ -1,10 +1,14 @@
 import { getStoredCart } from "../../../utils/content/cart/cartHandler.js";
 
-export default function showCart() {
+export default function displayCart() {
     const cart = getStoredCart();
     if (cart) {
-        //Display cart items
+        displayCart(cart);
     } else {
         //Display message
     }
+}
+
+function displayCart(cart) {
+    console.log(cart);
 }
