@@ -7,7 +7,7 @@ export default async function productDisplay() {
     const products = await getAllProducts();
     if (products) {
         buildProductDisplay(products, container);
-        attachCart();
+        attachCart(products);
     }
     
 }

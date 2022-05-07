@@ -1,23 +1,43 @@
-import { getStoredCart } from "../../../utils/content/cart/cartHandler.js";
+import { getStoredCart, removeFromCart } from "../../../utils/content/cart/cartHandler.js";
+
+const cartContainer = document.querySelector(".cart-display-container");
 
 (function displayCart() {
     const cart = getStoredCart();
-    const cartContainer = document.querySelector(".cart-display-container");
+    
     if (cart) {
-        cartContainer.innerHTML = generateCartHTML(cart);
+        generateCartHTML(cart, cartContainer);
+        
     } else {
         //Display message
     }
 })();
 
-function generateCartHTML(cart) {
+function generateCartHTML(cart, target) {
 
-    let cartString = "";
+    target.innerHTML = "";
 
     cart.forEach( (item) => {
         
-        cartString += `<p>${item}</p>`;
+        target.innerHTML += `<p>${item.title}</p>
+                            <button class="remove-button" value="remove from cart" data-id="${item.id}">Remove</button>`;
     })
     
-    return cartString;
+    attachRemove();
+
+    function totalCartPrice(cart) {
+        let sum = 0;
+
+        cart.forEach((item) => sum += item.price);
+    }
+}
+
+function attachRemove() {
+    const buttons = document.querySelectorAll(".remove-button");
+    buttons.forEach( (button) => {
+       button.addEventListener("click", (event) => {
+        const cart = removeFromCart(button.dataset.id);
+        generateCartHTML(cart, cartContainer);
+       });
+    });
 }

@@ -1,9 +1,9 @@
 import { getFromLocal, removeStorageItem, saveToLocal } from "../../storage/storage.js";
 
 
+let productList = [];
 
-
-export default function cartHandler(itemID) {
+function cartHandler(itemID) {
     
     const inCart = checkCart(itemID);
     
@@ -18,7 +18,8 @@ export default function cartHandler(itemID) {
     }
 }
 
-export function attachCart() {
+export function attachCart(products) {
+    productList = products;
     const cartButtons = document.querySelectorAll(".cart-button");
     cartButtons.forEach( (button) => {
         button.addEventListener("click", (event) => {
@@ -44,20 +45,24 @@ function checkCart(itemID) {
     return check;
 }
 
-function addToCart(item) {
+function addToCart(itemID) {
+    console.log(productList);
+    const product = productList.find((item) => item.id === parseInt(itemID));
+    console.log(product);
     if (getStoredCart()) {
         let cart = getStoredCart();
-        cart.push(item);
+        cart.push(product);
         storeCart(cart);
     } else {
-        let cart = [item];
+        let cart = [product];
         storeCart(cart);
     }
 }
 
-function removeFromCart(item) {
-    let newCart = getStoredCart().filter((cartItem) => cartItem !== item);
+export function removeFromCart(itemID) {
+    let newCart = getStoredCart().filter((cartItem) => cartItem.id !== parseInt(itemID));
     storeCart(newCart);
+    return newCart;
 }
 
 export function getStoredCart() {

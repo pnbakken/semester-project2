@@ -21,8 +21,8 @@ function buildHeroBanner(heroImage, target) {
 
     setBackgroundImage(image.imageURL, target);
     target.innerHTML = `<a class="banner-link" href="#">
-                                <h2 class="hero-heading jumbo-heading">On some faraway beach</h2>
-                                <p class="hero-text jumbo-text">New seascape collection in store</p>
+                                <h2 class="hero-heading jumbo-heading">Banner heading</h2>
+                                <p class="hero-text jumbo-text">Banner text etc and so on</p>
                             </a>`;
 
     function unpackHeroImage(heroImage) {

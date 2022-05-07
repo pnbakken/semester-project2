@@ -14,6 +14,6 @@ if (searchParams.has("product_id")) {
 
 if (id) {
     singleProduct(id, productWrapper);
-    attachCart();
+    attachCart(singleProduct);
 }
 
