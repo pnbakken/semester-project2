@@ -7,11 +7,10 @@
     .product-list-item {
         display: flex;
         flex-direction: column;
-        height: fit-content;
         width: 30%;
 
         .product-header {
-            height: 200px;
+            height: 300px;
 
             .product-image {
                 height: 70%;

@@ -51,11 +51,10 @@ body {
 .products-container .product-list-item {
   display: flex;
   flex-direction: column;
-  height: fit-content;
   width: 30%;
 }
 .products-container .product-list-item .product-header {
-  height: 200px;
+  height: 300px;
 }
 .products-container .product-list-item .product-header .product-image {
   height: 70%;

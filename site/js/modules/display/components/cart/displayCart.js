@@ -4,31 +4,34 @@ const cartContainer = document.querySelector(".cart-display-container");
 
 (function displayCart() {
     const cart = getStoredCart();
-    
-    if (cart) {
-        generateCartHTML(cart, cartContainer);
-        
-    } else {
-        //Display message
-    }
+    generateCartHTML(cart, cartContainer);
 })();
 
 function generateCartHTML(cart, target) {
 
     target.innerHTML = "";
 
-    cart.forEach( (item) => {
+    if (cart && cart.length > 0) {
+        cart.forEach( (item) => {
         
-        target.innerHTML += `<p>${item.title}</p>
-                            <button class="remove-button" value="remove from cart" data-id="${item.id}">Remove</button>`;
-    })
+            target.innerHTML += `<p>${item.title}</p>
+                                <button class="remove-button" value="remove from cart" data-id="${item.id}">Remove</button>`;
+        })
     
-    attachRemove();
+        target.innerHTML += "<br>Total price: " + totalCartPrice(cart);
+        
+        attachRemove();
+    } else {
+        target.innerHTML = "Shopping cart is empty";
+    }
+
+    
 
     function totalCartPrice(cart) {
         let sum = 0;
 
         cart.forEach((item) => sum += item.price);
+        return sum;
     }
 }
 

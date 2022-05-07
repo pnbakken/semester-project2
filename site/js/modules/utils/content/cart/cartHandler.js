@@ -34,7 +34,7 @@ export function attachCart(products) {
         if (inCart) {
             console.log(button + " is added to cart");
             button.classList.add("in-cart");
-            button.innerText = "Added to cart";
+            button.innerText = "In cart";
         } else {
             button.classList.remove("in-cart");
             console.log(button + " is removed from cart");
