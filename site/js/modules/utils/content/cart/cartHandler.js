@@ -24,21 +24,34 @@ export function attachCart(products) {
     cartButtons.forEach( (button) => {
         button.addEventListener("click", (event) => {
             event.preventDefault();
-            cartHandler(button.dataset.id);
-            console.log("added " + button.dataset.id);
+            const inCart = cartHandler(button.dataset.id);
+            cartButtonClassToggle(inCart, button);
         });
     });
     console.log("cart attached");
+
+    function cartButtonClassToggle(inCart, button) {
+        if (inCart) {
+            console.log(button + " is added to cart");
+            button.classList.add("in-cart");
+            button.innerText = "Added to cart";
+        } else {
+            button.classList.remove("in-cart");
+            console.log(button + " is removed from cart");
+            button.innerText = "Add to cart";
+        }
+    }
 }
 
-function checkCart(itemID) {
+export function checkCart(itemID) {
     const cart = getStoredCart();
     
     let check = false;
     if (cart) {
         cart.forEach( (cartItem) => {
-            if (itemID === cartItem) {
+            if (parseInt(itemID) === cartItem.id) {
                 check = true;
+                console.log("item already in cart");
             }
         })
     }
