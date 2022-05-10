@@ -63,4 +63,12 @@ body {
   background-position: center;
 }
 
+#new-product-image {
+  width: 100px;
+  height: 100px;
+  background-size: cover;
+  background-position: center;
+  display: none;
+}
+
 /*# sourceMappingURL=style.css.map */

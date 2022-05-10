@@ -26,10 +26,10 @@ async function displayEditProduct(id) {
         console.log(product);
         const title = document.querySelector("#product-title");
         const price = document.querySelector("#product-price");
-        const featured = document.querySelector("#is-featured");
+        const featured = document.querySelector("#product-featured");
         const description = document.querySelector("#product-description");
 
-        const productImage = document.querySelector(".product-image");
+        const productImage = document.querySelector("#new-product-image");
         const imageURL = document.querySelector("#product-image-url");
 
         title.value = product.title;

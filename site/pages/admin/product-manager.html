@@ -40,8 +40,9 @@
                 <label for="product-featured">Featured product</label><input type="checkbox" id="product-featured"/>
                 <textarea id="product-description" placeholder="New product description"></textarea>
                 <div class="product-image-group">
-                    <div class="product-image"></div>
+                    <div id="new-product-image"></div>
                     <input type="text" id="product-image-url" placeholder="New product image url"/>
+                    <button id="set-image" value="Set image">Set product image</button>
                 </div>
 
                 <button type="submit" id="submit-product" value="submit product">Submit</button>
@@ -56,5 +57,6 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <script src="../../js/modules/admin/display/productManager.js" type="module"></script>
+    <script src="../../js/modules/admin/product-management/productForm.js" type="module"></script>
 </body>
 </html>

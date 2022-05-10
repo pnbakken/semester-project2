@@ -9,8 +9,8 @@ export default async function singleProduct(id, target) {
 
 function displaySingleProduct(product, target) {
     console.log(product);
-    let displayHTML = `<p>${product.title}</p>
+    target.innerHTML = `<p>${product.title}</p>
                         <p>${product.price}</p>
                         <p>${product.description}</p>`;
-    return displayHTML;
+    
 }

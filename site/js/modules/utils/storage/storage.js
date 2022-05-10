@@ -1,5 +1,4 @@
 const storage = window.localStorage;
-console.log(storage);
 
 export function saveToLocal(key,item) {
     console.log("Storing " + item + " to " + key);
