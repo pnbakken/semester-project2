@@ -3,14 +3,11 @@ import { unpackProductDetails } from "./productDisplay.js";
 
 export default async function singleProduct(id, target) {
     const product = unpackProductDetails(await getOneProduct(id));
-
-    if (product) {
-        target.innerHTML = displaySingleProduct(product);
-    }
+    displaySingleProduct(product, target);
 
 }
 
-function displaySingleProduct(product) {
+function displaySingleProduct(product, target) {
     console.log(product);
     let displayHTML = `<p>${product.title}</p>
                         <p>${product.price}</p>

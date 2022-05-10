@@ -11,4 +11,6 @@ function productForm() {
 function validateProductForm(form) {
     const title = form.querySelector("#product-title");
     const price = form.querySelector("#product-price");
+    const description = form.querySelector("#product-description");
+    const featured = form.querySelector("#product-featured");
 }

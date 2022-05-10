@@ -22,12 +22,13 @@ function buildHeroBanner(heroImage, target) {
     setBackgroundImage(image.imageURL, target);
     target.innerHTML = `<a class="banner-link" href="#">
                                 <h2 class="hero-heading jumbo-heading">Banner heading</h2>
-                                <p class="hero-text jumbo-text">Banner text etc and so on</p>
+                                <p class="hero-text jumbo-text">Banner text and so on etc</p>
                             </a>`;
 
-    function unpackHeroImage(heroImage) {
-        
 
+                            
+    function unpackHeroImage(heroImage) {
+    
         return {
             alt : heroImage.hero_banner_alt_text,
             imageURL : baseURL + heroImage.hero_banner.formats.large.url,
