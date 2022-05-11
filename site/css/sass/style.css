@@ -42,6 +42,10 @@ body {
   }
 }
 
+.invalid-input {
+  border-color: red;
+}
+
 .products-container {
   width: 100%;
   display: flex;

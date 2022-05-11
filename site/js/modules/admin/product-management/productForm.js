@@ -8,16 +8,23 @@ import setBackgroundImage from "../../utils/content/setBackgroundImage.js";
     const featured = document.querySelector("#product-featured");
     const imageURL = document.querySelector("#product-image-url");
 
+    let productID = null;
 
+export default function attachProductForm(editing, id=null) {
+    if (id) {
+        productID = id;
+    }
     productForm();
     productImage();
+}
+    
 
-export function productForm() {
+function productForm() {
     const form = document.querySelector("#product-form");
     form.addEventListener("submit", (event) => {
         event.preventDefault();
-        console.log("image clicked");
-         const valid = validateProductForm(form);
+         actionProductForm();
+         
     });
 }
 
@@ -43,28 +50,107 @@ async function productImage() {
     }
 }
 
-function validateProductForm() {
+async function actionProductForm() {
+
+    const valid = await checkValid();
+    const product = collectProduct();
+    if (valid) {
+        console.log("Form valid");
+        if (productID) {
+            updateProduct(product, productID);
+        } else {
+            createNewProduct(product);
+        }
+    } else {
+        console.log("form invalid");
+    }
     
+    
+    function collectProduct() {
+        const product = {
+            "title" : title.value,
+            "price" : price.value,
+            "description" : description.value,
+            "image_url": imageURL.value,
+            "featured": featured.checked,
+            
+        }
+        return product;
+    }
+
+
+    async function checkValid() {
+        let valid = true;
+
+    //Do checks and react
+
+    if (validateText(title)) {
+        toggleInvalid(title, false);
+        console.log("Title valid");
+    } else {
+        toggleInvalid(title, true);
+        valid = false;
+        console.log("Title invalid");
+    }
+
+    if (await validateImageURL(imageURL)) {
+        toggleInvalid(imageURL, false);
+        console.log("image valid");
+    } else {
+        toggleInvalid(imageURL, true);
+        valid = false;
+        console.log("Image invalid");
+    }
+
+    if (validatePrice(price)) {
+        toggleInvalid(price, false);
+    } else {
+        toggleInvalid(price, true);
+        valid = false;
+    }
+
+    if (validateText(description)) {
+        toggleInvalid(description, false);
+    } else {
+        toggleInvalid(description, true);
+    }
+
+    return valid;
+
+
+    function toggleInvalid(target, invalid) {
+        if (invalid) {
+            target.classList.add("invalid-input");
+        } else {
+            target.classList.remove("invalid-input");
+        }
+    }
+
 
 
     function validateText(text) {
-        return (text.value.trim() >= 5);
+        return (text.value.trim());
     }
 
-    function validateImageURL(imageURL) {
+    async function validateImageURL(imageURL) {
         const imageRegex = /([a-z\-_0-9\/\:\.]*\.(jpg|jpeg|png|gif))/i;
-        return imageRegex.test(imageURL.trim());
+        if (imageRegex.test(imageURL.value)) {
+            try {
+                const response = await fetch(imageURL.value);
+                if (response.ok) {
+                    return true;
+                } else return false;
+            } catch (err) {
+                console.error(err)
+                return false;
+            }
+        } else return false;
     }
 
     function validatePrice(price) {
         const priceRegex = /^\d*(\.\d{0,2})?$/;
-        return priceRegex.test(price.value);
+        return (price.value);
     }
-
-
-
-    function doValidation(title, price, description, featured, imageURL) {
-
     }
 }
 

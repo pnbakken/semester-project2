@@ -2,20 +2,29 @@ import checkLogin from "../utils/checkLogin.js";
 import getOneProduct from "../../utils/content/products/getOneProduct.js";
 import { unpackProductDetails } from "../../display/components/products/productDisplay.js";
 import setBackgroundImage from "../../utils/content/setBackgroundImage.js";
-import newProduct from "../product-management/newProduct.js";
+import attachProductForm from "../product-management/productForm.js";
 
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 
-let editing;
+let newProduct;
 
 if(urlParams.get("product_id")) {
     console.log("Has product_id: " + urlParams.get("product_id"));
     displayEditProduct(urlParams.get("product_id"));
-    editing = true;
+    newProduct = false;
 } else {
-    editing = false;
+    newProduct = true;
 }
+
+if (newProduct) {
+    attachProductForm(newProduct);
+} else {
+    attachProductForm(newProduct, urlParams.get("product_id"));
+}
+
+
+
 
 async function displayEditProduct(id) {
     const product = unpackProductDetails(await getOneProduct(id));
@@ -41,14 +50,4 @@ async function displayEditProduct(id) {
         imageURL.value = product.image;
 
     }
-}
-
-function attachProductListener(editing) {
-
-    if (editing) {
-        
-    } else {
-        newProduct();
-    }
-
 }
