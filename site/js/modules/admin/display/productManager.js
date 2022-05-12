@@ -2,7 +2,7 @@ import checkLogin from "../utils/checkLogin.js";
 import getOneProduct from "../../utils/content/products/getOneProduct.js";
 import { unpackProductDetails } from "../../display/components/products/productDisplay.js";
 import setBackgroundImage from "../../utils/content/setBackgroundImage.js";
-import attachProductForm from "../product-management/productForm.js";
+import attachProductForm, { deleteProduct } from "../product-management/productForm.js";
 
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
@@ -48,6 +48,13 @@ async function displayEditProduct(id) {
 
         setBackgroundImage(product.image, productImage);
         imageURL.value = product.image;
+
+        const deleteButton = document.querySelector("#delete-product");
+        deleteButton.style = "display: inline";
+        deleteButton.addEventListener("click", (event) => {
+            event.preventDefault();
+            deleteProduct(id);
+        })
 
     }
 }

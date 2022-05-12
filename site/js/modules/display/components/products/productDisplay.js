@@ -55,7 +55,7 @@ export function unpackProductDetails(product) {
         title: product.title,
         price: product.price,
         description : product.description,
-        image: baseURL + product.image.formats.medium.url,
+        image: product.image_url,
         featured: product.featured,
     }
 }        

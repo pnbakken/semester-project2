@@ -1,6 +1,7 @@
 // const priceRegex = /^\d*(\.\d{0,2})?$/;
 
 import setBackgroundImage from "../../utils/content/setBackgroundImage.js";
+import { createNewProduct, sendDelete, updateProduct } from "./productActions.js";
 
     const title = document.querySelector("#product-title");
     const price = document.querySelector("#product-price");
@@ -154,3 +155,9 @@ async function actionProductForm() {
     }
 }
 
+export function deleteProduct(productID) {
+    const userConfirm = confirm("Are you sure you want to delete this product?");
+    if (userConfirm) {
+        sendDelete(productID);
+    }
+}
