@@ -10,7 +10,7 @@ export async function updateProduct(product, productID) {
 }
 
 export async function createNewProduct(product) {
-    const url = baseURL + "/products";
+    const url = baseURL + "/products/";
     const method = "POST";
     const result = await sendProduct(url, product, method)
     handleResult(result);

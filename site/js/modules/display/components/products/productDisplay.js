@@ -6,6 +6,7 @@ export default async function productDisplay() {
     const container = document.querySelector(".products-container");
     const products = await getAllProducts();
     if (products) {
+        console.log("displaying products");
         buildProductDisplay(products, container);
         attachCart(products);
     }
@@ -20,16 +21,16 @@ function buildProductDisplay(products, target) {
 
 function productToHTML(product) {
     const details = unpackProductDetails(product);
-    const inCart = checkCart(details.id)
+    const inCart = checkCart(product.id)
     console.log("Product in cart: " + inCart);
     return `<div class="product-list-item">
                 <div class="product-header">
-                    <div class="product-image" style="background-image:url('${details.image}');"></div>
-                    <h4 class="product-name">${details.title}</h4>
-                    ${createCartButton(inCart, details.id)}
+                    <div class="product-image" style="background-image:url('${product.image_url}');"></div>
+                    <h4 class="product-name">${product.title}</h4>
+                    ${createCartButton(inCart, product.id)}
                     <br>
-                    ${details.price}
-                    <a class="item-button item-link" href="./one-product.html?product_id=${details.id}">View</a>
+                    ${product.price}
+                    <a class="item-button item-link" href="./one-product.html?product_id=${product.id}">View</a>
                 </div>
             </div>`;
 

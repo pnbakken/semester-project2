@@ -3,7 +3,7 @@ import {baseURL} from "../../utils/network/baseUrl.js";
 import { saveToLocal } from "../../utils/storage/storage.js";
 
     const form = document.querySelector("#login-form");
-    const loginURL = baseURL + "/auth/local"; 
+    const loginURL = baseURL + "/auth/local/"; 
 
     let loginEmail;
     let loginPassword;

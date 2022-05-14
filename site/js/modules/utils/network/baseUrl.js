@@ -1,1 +1,1 @@
-export const baseURL = "http://localhost:1337";
+export const baseURL = "https://stark-earth-14984.herokuapp.com";
