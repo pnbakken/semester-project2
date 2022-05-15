@@ -3,6 +3,7 @@ import getOneProduct from "../../utils/content/products/getOneProduct.js";
 import { unpackProductDetails } from "../../display/components/products/productDisplay.js";
 import setBackgroundImage from "../../utils/content/setBackgroundImage.js";
 import attachProductForm, { deleteProduct } from "../product-management/productForm.js";
+import { commonSearch } from "../../utils/content/search/search.js";
 
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
@@ -58,3 +59,5 @@ async function displayEditProduct(id) {
 
     }
 }
+
+commonSearch("../products.html");

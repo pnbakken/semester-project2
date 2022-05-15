@@ -1,5 +1,6 @@
 import { attachCart, checkCart } from "../../../utils/content/cart/cartHandler.js";
 import getAllProducts from "../../../utils/content/products/getAllProducts.js";
+import { doSearch, productSearch } from "../../../utils/content/search/search.js";
 import { baseURL } from "../../../utils/network/baseUrl.js";
 
 export default async function productDisplay() {
@@ -7,16 +8,18 @@ export default async function productDisplay() {
     const products = await getAllProducts();
     if (products) {
         console.log("displaying products");
-        buildProductDisplay(products, container);
+        checkSearch(products, container);
         attachCart(products);
     }
     
 }
 
-function buildProductDisplay(products, target) {
+function buildProductDisplay(products, target, heading) {
+    target.innerHTML =`<h1>${heading}</h1>`;
     products.forEach( (product) => {
        target.innerHTML += productToHTML(product);
     })
+    
 }
 
 function productToHTML(product) {
@@ -45,7 +48,7 @@ function productToHTML(product) {
             buttonText = "Add to cart";
         }
 
-        return `<button class="cart-button ${buttonClass} value="add or remove from cart" data-id="${id}">${buttonText}</button>`;
+        return `<button class="cart-button ${buttonClass}" value="add or remove from cart" data-id="${id}">${buttonText}</button>`;
     }
              
 }
@@ -60,3 +63,16 @@ export function unpackProductDetails(product) {
         featured: product.featured,
     }
 }        
+
+function checkSearch(products, target) {
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    console.log(urlParams.get("search_query"));
+    if (urlParams.has("search_query")) {
+        const searchResults = doSearch(urlParams.get("search_query"), products);
+        console.log(searchResults);
+        buildProductDisplay(searchResults, target, `Search results for "${urlParams.get("search_query")}"`);
+    } else {
+        buildProductDisplay(products, target, "Products");
+    }
+}
