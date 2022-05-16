@@ -52,22 +52,34 @@ body {
   flex-direction: column;
   flex-wrap: wrap;
   gap: 20px;
+  padding: 1rem;
 }
 .products-container .product-list {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
+  justify-content: center;
 }
 .products-container .product-list-item {
   display: flex;
   flex-direction: column;
-  width: 30%;
+  width: 32%;
+}
+@media (max-width: 768px) {
+  .products-container .product-list-item {
+    width: 45%;
+  }
+}
+@media (max-width: 550px) {
+  .products-container .product-list-item {
+    width: 66%;
+  }
 }
 .products-container .product-list-item .product-header {
   height: 300px;
 }
 .products-container .product-list-item .product-header .product-image {
-  height: 70%;
+  height: 90%;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;

@@ -15,7 +15,7 @@ export default async function productDisplay() {
     
 }
 
-async function buildProductDisplay(products, target, heading) {
+function buildProductDisplay(products, target, heading) {
     target.innerHTML =`<h1>${heading}</h1>`;
     target.innerHTML += productsToHTML(products, target);
 
@@ -31,6 +31,7 @@ function productsToHTML(products, target) {
                                 <div class="product-header">
                                     <div class="product-image" style="background-image:url('${product.image_url}');"></div>
                                     <h4 class="product-name">${product.title}</h4>
+                                </div>
                                     ${createCartButton(inCart, product.id)}
                                     <br>
                                     ${product.price}
