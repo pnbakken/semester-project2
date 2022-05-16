@@ -2,6 +2,7 @@ import { attachCart, checkCart } from "../../../utils/content/cart/cartHandler.j
 import getAllProducts from "../../../utils/content/products/getAllProducts.js";
 import { doSearch, productSearch } from "../../../utils/content/search/search.js";
 import { baseURL } from "../../../utils/network/baseUrl.js";
+import createCartButton from "../cart/cartButton.js";
 
 export default async function productDisplay() {
     const container = document.querySelector(".products-container");
@@ -9,47 +10,36 @@ export default async function productDisplay() {
     if (products) {
         console.log("displaying products");
         checkSearch(products, container);
-        attachCart(products);
+        
     }
     
 }
 
-function buildProductDisplay(products, target, heading) {
+async function buildProductDisplay(products, target, heading) {
     target.innerHTML =`<h1>${heading}</h1>`;
-    products.forEach( (product) => {
-       target.innerHTML += productToHTML(product);
-    })
-    
+    target.innerHTML += productsToHTML(products, target);
+
+    attachCart(products);
 }
 
-function productToHTML(product) {
-    const details = unpackProductDetails(product);
-    const inCart = checkCart(product.id)
-    console.log("Product in cart: " + inCart);
-    return `<div class="product-list-item">
-                <div class="product-header">
-                    <div class="product-image" style="background-image:url('${product.image_url}');"></div>
-                    <h4 class="product-name">${product.title}</h4>
-                    ${createCartButton(inCart, product.id)}
-                    <br>
-                    ${product.price}
-                    <a class="item-button item-link" href="./one-product.html?product_id=${product.id}">View</a>
-                </div>
-            </div>`;
+function productsToHTML(products, target) {
 
-    function createCartButton(inCart, id) {
-        let buttonClass
-        let buttonText;
-        if (inCart) {
-            buttonClass = "in-cart";
-            buttonText = "In cart";
-        } else {
-            buttonClass = "";
-            buttonText = "Add to cart";
-        }
-
-        return `<button class="cart-button ${buttonClass}" value="add or remove from cart" data-id="${id}">${buttonText}</button>`;
-    }
+    let generatedHTML = `<div class="product-list">`;
+    products.forEach((product) => {
+        const inCart = checkCart(product.id)
+        generatedHTML += `<div class="product-list-item">
+                                <div class="product-header">
+                                    <div class="product-image" style="background-image:url('${product.image_url}');"></div>
+                                    <h4 class="product-name">${product.title}</h4>
+                                    ${createCartButton(inCart, product.id)}
+                                    <br>
+                                    ${product.price}
+                                    <a class="item-button item-link" href="./one-product.html?product_id=${product.id}">View</a>
+                                </div>
+                            </div>`
+    });
+    generatedHTML += "</div>";
+    return generatedHTML;
              
 }
 

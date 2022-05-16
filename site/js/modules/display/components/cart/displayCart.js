@@ -1,10 +1,12 @@
 import { getStoredCart, removeFromCart } from "../../../utils/content/cart/cartHandler.js";
+import { commonSearch } from "../../../utils/content/search/search.js";
 
 const cartContainer = document.querySelector(".cart-display-container");
 
 (function displayCart() {
     const cart = getStoredCart();
     generateCartHTML(cart, cartContainer);
+    commonSearch("./products.html");
 })();
 
 function generateCartHTML(cart, target) {

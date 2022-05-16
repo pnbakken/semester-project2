@@ -19,7 +19,7 @@ export function productSearch(products) {
 
 export function doSearch(query, list) {
     const results = list.filter((item) => {
-        if (item.title.toLowerCase().includes(query.toLowerCase() || item.description.toLowerCase().includes(query.toLowerCase()))) return true;
+        if (item.title.toLowerCase().includes(query.toLowerCase()) || item.description.toLowerCase().includes(query.toLowerCase())) return true;
     })
     return results;
 }

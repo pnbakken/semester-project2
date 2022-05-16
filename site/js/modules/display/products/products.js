@@ -6,7 +6,3 @@ import productDisplay from "../components/products/productDisplay.js";
     commonSearch("./products.html");
 })();
 
-function checkSearch() {
-    const queryString = window.location.search;
-    const urlParams = new URLSearchParams(queryString);
-}

@@ -49,6 +49,12 @@ body {
 .products-container {
   width: 100%;
   display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.products-container .product-list {
+  display: flex;
   flex-wrap: wrap;
   gap: 20px;
 }
