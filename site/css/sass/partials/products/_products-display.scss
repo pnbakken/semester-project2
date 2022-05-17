@@ -11,12 +11,13 @@
         flex-wrap: wrap;
         gap: 40px;
         justify-content: center;
+        width: 100%;
     }
 
     .product-list-item {
         display: flex;
         flex-direction: column;
-        width: 32%;
+        width: 20%;
 
 
         @media (max-width: 768px) {
