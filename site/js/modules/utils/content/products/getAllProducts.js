@@ -7,5 +7,7 @@ export default async function getAllProducts() {
     const productURL = baseURL + "/products";
 
     allProducts = await fetchData(productURL);
-    return  allProducts;
+    if (allProducts && !allProducts.error) {
+        return allProducts;
+    } else return null;
 }

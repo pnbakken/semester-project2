@@ -20,10 +20,16 @@ function buildHeroBanner(heroImage, target) {
     const image = unpackHeroImage(heroImage);
 
     setBackgroundImage(image.imageURL, target);
-    target.innerHTML = `<a class="banner-link" href="#">
-                                <p class="hero-text jumbo-text">${image.alt}</p>
-                            </a>`;
+    target.innerHTML = setBannerText(image);
 
+    function setBannerText(image) {
+        return `<a class="banner-link" href="./pages/products.html">
+                        <p class="hero-text">${image.alt}</p>
+                        <p class="pseudo-button">See more</p>
+                    </a>`;
+    
+    }
+ 
 
                             
     function unpackHeroImage(heroImage) {

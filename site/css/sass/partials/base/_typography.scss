@@ -1,11 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;700&family=Trirong:ital,wght@0,700;1,500&display=swap');
 
+$font-display: "Trirong", serif;
+$font-heading: "Raleway", sans-serif;
 
-
-.jumbo-link {
-    color: $color-white;
+.banner-link {
+    font-family: $font-display;
+    color: $color-purple;
+    font-size: 32px;
+    font-style: italic;
     text-decoration: none;
+
+    .pseudo-button {
+        font-style: normal;
+        font-weight: semi-bold;
+        font-size: 24px;
+    }
+
 }
 
-.jumbo-link:hover {
-    color: $color-white;
+.nav-link {
+    font-family: $font-heading;
+    font-weight: 700;
+    color: $color-purple;
+
+    
+}
+
+.active {
+        color: $color-purple;
 }

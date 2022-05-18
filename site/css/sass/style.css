@@ -1,10 +1,25 @@
-.jumbo-link {
-  color: #fff;
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;700&family=Trirong:ital,wght@0,700;1,500&display=swap");
+.banner-link {
+  font-family: "Trirong", serif;
+  color: #3E1929;
+  font-size: 32px;
+  font-style: italic;
   text-decoration: none;
 }
+.banner-link .pseudo-button {
+  font-style: normal;
+  font-weight: semi-bold;
+  font-size: 24px;
+}
 
-.jumbo-link:hover {
-  color: #fff;
+.nav-link {
+  font-family: "Raleway", sans-serif;
+  font-weight: 700;
+  color: #3E1929;
+}
+
+.active {
+  color: #3E1929;
 }
 
 body {
@@ -13,33 +28,85 @@ body {
   min-height: 100vh;
 }
 
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-left: 2.5%;
+  padding-right: 2.5%;
+  width: 100%;
+}
+
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
 
+.common-navbar {
+  padding: 1rem;
+  width: 100%;
+}
+@media (max-width: 425px) {
+  .common-navbar {
+    padding: 0.5rem;
+  }
+}
+.common-navbar .brand-logo {
+  width: 60%;
+}
+@media (max-width: 425px) {
+  .common-navbar .brand-logo {
+    width: 50%;
+  }
+}
+.common-navbar .navbar-toggler .navbar-toggler-icon {
+  color: #000022;
+  background: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280, 0, 0, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
 .hero-banner {
   background-size: cover;
   background-position: center;
-  height: 90vh;
+  height: 80vh;
   width: 100%;
   position: relative;
+  border-radius: 0.5%;
+  margin-bottom: 150px;
+}
+@media (max-width: 768px) {
+  .hero-banner {
+    margin-bottom: 75px;
+  }
 }
 .hero-banner .banner-link {
   position: absolute;
-  top: 40%;
-  right: 20%;
-  background: #0319271f;
-  width: fit-content;
+  top: 15%;
+  left: 10%;
   padding: 3%;
   text-align: center;
   border-radius: 0.25rem;
+  display: flex;
+  flex-direction: column;
 }
 @media (max-width: 768px) {
   .hero-banner .banner-link {
-    right: 10%;
+    right: 0;
+    left: 0;
+    text-align: center;
   }
+}
+.hero-banner .banner-link:hover {
+  color: #3E1929;
+}
+
+.pseudo-button {
+  background: #3E1929;
+  color: white;
+  width: fit-content;
+  align-self: center;
+  padding: 3px 10px;
+  border-radius: 0.2rem;
 }
 
 .invalid-input {
@@ -76,11 +143,70 @@ body {
     width: 66%;
   }
 }
-.products-container .product-list-item .product-image {
-  height: 250px;
+
+.product-image {
+  width: 100%;
+  height: 200px;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+}
+
+.featured-container {
+  background: #000022;
+  width: 95%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+}
+@media (max-width: 768px) {
+  .featured-container {
+    width: 100%;
+  }
+}
+.featured-container .featured-product-list {
+  padding: 2.5%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+  width: 100%;
+  justify-content: center;
+}
+.featured-container .featured-product-list .featured-product {
+  padding: 1rem;
+  background: white;
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+@media (max-width: 1400px) {
+  .featured-container .featured-product-list .featured-product {
+    width: 25%;
+  }
+}
+@media (max-width: 1024px) {
+  .featured-container .featured-product-list .featured-product {
+    width: 33%;
+  }
+}
+@media (max-width: 768px) {
+  .featured-container .featured-product-list .featured-product {
+    width: 45%;
+  }
+}
+@media (max-width: 600px) {
+  .featured-container .featured-product-list .featured-product {
+    width: 80%;
+  }
+}
+.featured-container .featured-product-list .featured-product .product-header-link {
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
 }
 
 #new-product-image {

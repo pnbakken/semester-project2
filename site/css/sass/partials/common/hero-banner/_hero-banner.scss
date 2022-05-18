@@ -2,23 +2,44 @@
     
     background-size: cover;
     background-position: center;
-    height: 90vh;
+    height: 80vh;
     width: 100%;
     position: relative;
+    border-radius: 0.5%;
+    margin-bottom: 150px;
+
+    @media(max-width: 768px) {
+        margin-bottom: 75px;
+    }
 
     .banner-link {
         position: absolute;
-        top: 40%;
-        right: 20%;
-        background: $color-rich-black-transparent;
-        width: fit-content;
+        top: 15%;
+        left: 10%;
         padding: 3%;
         text-align: center;
         border-radius: 0.25rem;
+        display: flex;
+        flex-direction: column;
 
         @media(max-width: 768px) {
-            right: 10%;
+            right: 0;
+            left: 0;
+            text-align: center;
             
         }
     }
+
+    .banner-link:hover {
+        color: $color-purple;
+    }
+}
+
+.pseudo-button {
+    background: $color-purple;
+    color: white;
+    width: fit-content;
+    align-self: center;
+    padding: 3px 10px;
+    border-radius: 0.2rem;
 }
