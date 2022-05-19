@@ -1,0 +1,34 @@
+.content-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pseudo-button {
+    background: $color-purple;
+    color: white;
+    width: fit-content;
+    align-self: center;
+    padding: 3px 30px;
+    border-radius: 0.2rem;
+    border: 2px solid $color-purple;
+    transition: 0.1s;
+}
+.pseudo-button:hover {
+    color: $color-purple;
+    background: none;
+}   
+
+.green-bg {
+    background: $color-green;
+    color: white;
+    border-color: $color-green;
+}
+.green-bg:hover {
+    background: $color-green;
+    color: white;
+}
+
+.white-text {
+    color: white;
+}

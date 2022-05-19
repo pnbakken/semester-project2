@@ -1,19 +1,25 @@
 .common-navbar {
- padding: 1rem;
-
+ padding: 1.5rem;
+ margin-bottom: 50px;
+ width: 100%;
+ display: flex;
+ justify-content: space-between;
+ align-items: flex-end;
  @media (max-width: 425px) {
      padding: 0.5rem;
- }
+ } 
+    .navbar-brand {
+        
+        width: 200px;
 
- width: 100%;
-
-     .brand-logo {
-        width: 60%;
-   
         @media (max-width: 425px) {
-           width: 50%;
-       }
+            width: 150px;
+        }
+        .brand-logo {
+            width: 100%;
+        }
     }
+     
 
     .navbar-toggler{
 

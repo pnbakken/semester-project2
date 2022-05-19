@@ -1,4 +1,6 @@
+import { attachCart } from "../../../utils/content/cart/cartHandler.js";
 import getAllProducts from "../../../utils/content/products/getAllProducts.js";
+import createCartButton from "../cart/cartButton.js";
 import addLoader from "../common/loader.js";
 import createMessage from "../common/message.js";
 import { unpackProductDetails } from "./productDisplay.js";
@@ -15,7 +17,7 @@ export default async function featuredProducts() {
         featuredProducts = products.filter( (product) => (product.featured)); 
     } else featuredProducts = null;
     displayFeaturedProducts(featuredProducts, featuredContainer);
-
+    attachCart(featuredProducts);
 
 } 
 
@@ -29,25 +31,33 @@ function displayFeaturedProducts(featuredProducts, target) {
 
 
     function createFeaturedList(featuredProducts) {
-        let html = `<div class="featured-product-list">`;
+        let html = `<h2 class="list-heading featured-heading">Featured products</h2>
+                    <div class="product-list featured-product-list">`;
 
         featuredProducts.forEach((product) => {
             html += featuredProductToHTML(product);
         })
 
-        html += `</div>`;
+        html += `</div>
+                 <div class="content-block">
+                    <p class="white-text">Check out more of our great items</p>
+                    <a class="pseudo-button green-bg" href="./pages/products.html">See more</a>
+                 </div>`;
         return html;
     }
 
     function featuredProductToHTML(product) {
         const featuredProduct = unpackProductDetails(product);
 
-        return `<div class="featured-product">
+        return `<div class="product featured-product">
                     <a class="product-header-link" href="./pages/one-product.html?product_id=${featuredProduct.id}">
                         <div class="product-image featured-product-image" style="background-image:url('${featuredProduct.image}');"></div>
-                        <p class="product-title featured-product-title">${featuredProduct.title}</p>
+                        <span class="product-title featured-product-title">${featuredProduct.title}</span>
                     </a>
-                    <p class="product-price featured-product-price">${featuredProduct.price}</p>
+                    <div class="price-and-cart">
+                        <span class="product-price featured-product-price">${featuredProduct.price}</span>
+                        ${createCartButton(featuredProduct.id)}
+                    </div>
                     <a class="pseudo-button" href="./pages/one-product.html?product_id=${featuredProduct.id}">View</a>
                 </div>`; 
     }

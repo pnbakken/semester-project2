@@ -2,14 +2,17 @@
 .banner-link {
   font-family: "Trirong", serif;
   color: #3E1929;
-  font-size: 32px;
+  font-size: 56px;
   font-style: italic;
   text-decoration: none;
 }
-.banner-link .pseudo-button {
+
+.pseudo-button {
+  font-family: "Raleway", sans-serif;
   font-style: normal;
-  font-weight: semi-bold;
+  font-weight: 600;
   font-size: 24px;
+  text-decoration: none;
 }
 
 .nav-link {
@@ -19,6 +22,23 @@
 }
 
 .active {
+  color: #3E1929;
+}
+
+.list-heading {
+  font-family: "Raleway", sans-serif;
+  font-size: 40px;
+  font-weight: 600;
+}
+
+.featured-heading {
+  color: white;
+}
+
+.product-title {
+  font-family: "Raleway", sans-serif;
+  font-weight: 700;
+  font-size: 24px;
   color: #3E1929;
 }
 
@@ -32,9 +52,44 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-left: 2.5%;
-  padding-right: 2.5%;
   width: 100%;
+}
+
+.content-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pseudo-button {
+  background: #3E1929;
+  color: white;
+  width: fit-content;
+  align-self: center;
+  padding: 3px 30px;
+  border-radius: 0.2rem;
+  border: 2px solid #3E1929;
+  transition: 0.1s;
+}
+
+.pseudo-button:hover {
+  color: #3E1929;
+  background: none;
+}
+
+.green-bg {
+  background: #096B72;
+  color: white;
+  border-color: #096B72;
+}
+
+.green-bg:hover {
+  background: #096B72;
+  color: white;
+}
+
+.white-text {
+  color: white;
 }
 
 * {
@@ -44,21 +99,28 @@ main {
 }
 
 .common-navbar {
-  padding: 1rem;
+  padding: 1.5rem;
+  margin-bottom: 50px;
   width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
 }
 @media (max-width: 425px) {
   .common-navbar {
     padding: 0.5rem;
   }
 }
-.common-navbar .brand-logo {
-  width: 60%;
+.common-navbar .navbar-brand {
+  width: 200px;
 }
 @media (max-width: 425px) {
-  .common-navbar .brand-logo {
-    width: 50%;
+  .common-navbar .navbar-brand {
+    width: 150px;
   }
+}
+.common-navbar .navbar-brand .brand-logo {
+  width: 100%;
 }
 .common-navbar .navbar-toggler .navbar-toggler-icon {
   color: #000022;
@@ -100,17 +162,29 @@ main {
   color: #3E1929;
 }
 
-.pseudo-button {
-  background: #3E1929;
-  color: white;
-  width: fit-content;
-  align-self: center;
-  padding: 3px 10px;
-  border-radius: 0.2rem;
+.cart-button {
+  font-weight: 500;
+  font-family: "Raleway", sans-serif;
+  padding: 5px 10px;
+  display: flex;
+  gap: 5px;
+}
+.cart-button .cart-icon {
+  background-size: cover;
+  width: 40px;
+  height: 39px;
+  background-image: url("../../../../../assets/icon/cart-add.png");
 }
 
 .invalid-input {
   border-color: red;
+}
+
+footer {
+  background: #0C1114;
+  color: white;
+  padding: 1.5rem;
+  margin-top: 150px;
 }
 
 .products-container {
@@ -155,50 +229,55 @@ main {
 .featured-container {
   background: #000022;
   width: 95%;
+  padding: 3rem;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   gap: 50px;
 }
 @media (max-width: 768px) {
   .featured-container {
     width: 100%;
+    padding: 2rem;
   }
 }
 .featured-container .featured-product-list {
-  padding: 2.5%;
   display: flex;
   flex-wrap: wrap;
   gap: 50px;
   width: 100%;
-  justify-content: center;
+  justify-content: space-evenly;
 }
 .featured-container .featured-product-list .featured-product {
   padding: 1rem;
   background: white;
-  width: 18%;
+  width: 20%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
+  gap: 10px;
 }
 @media (max-width: 1400px) {
   .featured-container .featured-product-list .featured-product {
-    width: 22%;
+    width: 25%;
   }
 }
-@media (max-width: 1024px) {
+@media (max-width: 1250px) {
   .featured-container .featured-product-list .featured-product {
     width: 30%;
   }
 }
 @media (max-width: 768px) {
   .featured-container .featured-product-list .featured-product {
+    padding: 0.5rem;
     width: 40%;
   }
 }
 @media (max-width: 600px) {
   .featured-container .featured-product-list .featured-product {
-    width: 75%;
+    width: 100%;
   }
 }
 .featured-container .featured-product-list .featured-product .product-header-link {
@@ -207,8 +286,8 @@ main {
   display: flex;
   flex-direction: column;
   gap: 5px;
+  text-decoration: none;
 }
-
 #new-product-image {
   width: 100px;
   height: 100px;

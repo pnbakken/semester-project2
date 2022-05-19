@@ -1,43 +1,47 @@
 .featured-container {
     background: $color-deep-blue;
     width: 95%;
-    
+    padding: 3rem;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     gap: 50px;
 
     @media(max-width: 768px) {
         width:100%;
+        padding: 2rem;
     }
 
     .featured-product-list {
-        padding: 2.5%; 
         display: flex;
         flex-wrap: wrap;
         gap: 50px;
         width: 100%;
-        justify-content: center;
+        justify-content: space-evenly;
 
         .featured-product {
             padding: 1rem;
             background: white;
-            width: 18%;
+            width: 20%;
             display: flex;
             flex-direction: column;
             align-items: center;
+            justify-content: space-between;
+            gap:10px;
 
             @media(max-width: 1400px) {
-                width: 22%;
+                width: 25%;
             }
-            @media(max-width: 1024px) {
+            @media(max-width: 1250px) {
                 width: 30%;
             }
             @media(max-width: 768px) {
+                padding: 0.5rem;
                 width: 40%;
             }
             @media(max-width: 600px) {
-                width: 75%;
+                width: 100%;
             }
 
             .product-header-link {
@@ -46,6 +50,11 @@
                 display:flex;
                 flex-direction: column;
                 gap: 5px;
+                text-decoration: none;
+            }
+
+            .price-and-cart {
+
             }
         }
     }

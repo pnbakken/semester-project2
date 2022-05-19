@@ -27,11 +27,11 @@ function productsToHTML(products, target) {
     let generatedHTML = `<div class="product-list">`;
     products.forEach((product) => {
         const inCart = checkCart(product.id)
-        generatedHTML += `<div class="product-list-item">
+        generatedHTML += `<div class="product">
                                 
                                     <div class="product-image" style="background-image:url('${product.image_url}');"></div>
                                     <h4 class="product-name">${product.title}</h4>
-                                    ${createCartButton(inCart, product.id)}
+                                    ${createCartButton(product.id)}
                                     <br>
                                     ${product.price}
                                     <a class="item-button item-link" href="./one-product.html?product_id=${product.id}">View</a>

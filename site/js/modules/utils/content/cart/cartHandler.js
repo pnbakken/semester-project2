@@ -33,7 +33,7 @@ export function attachCart(products) {
     function cartButtonClassToggle(inCart, button) {
         if (inCart) {
             console.log(button + " is added to cart");
-            button.classList.add("in-cart");
+            button.classList.add("added-cart");
             button.innerText = "In cart";
         } else {
             button.classList.remove("in-cart");
@@ -61,6 +61,7 @@ export function checkCart(itemID) {
 function addToCart(itemID) {
     console.log(productList);
     const product = productList.find((item) => item.id === parseInt(itemID));
+    console.log(itemID);
     console.log(product);
     if (getStoredCart()) {
         let cart = getStoredCart();

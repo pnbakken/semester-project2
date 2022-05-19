@@ -6,16 +6,18 @@ $font-heading: "Raleway", sans-serif;
 .banner-link {
     font-family: $font-display;
     color: $color-purple;
-    font-size: 32px;
+    font-size: 56px;
     font-style: italic;
     text-decoration: none;
 
-    .pseudo-button {
-        font-style: normal;
-        font-weight: semi-bold;
-        font-size: 24px;
-    }
+}
 
+.pseudo-button {
+    font-family: $font-heading;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    text-decoration: none;
 }
 
 .nav-link {
@@ -28,4 +30,21 @@ $font-heading: "Raleway", sans-serif;
 
 .active {
         color: $color-purple;
+}
+
+.list-heading {
+    font-family: $font-heading;
+    font-size: 40px;
+    font-weight: 600;
+}
+
+.featured-heading {
+    color: white;
+}
+
+.product-title {
+    font-family: $font-heading;
+    font-weight: 700;
+    font-size:24px;
+    color: $color-purple;
 }
