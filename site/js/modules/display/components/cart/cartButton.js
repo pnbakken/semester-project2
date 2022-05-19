@@ -13,5 +13,5 @@ export default function createCartButton( id) {
         buttonText = "Add to cart";
     }
 
-    return `<button class="cart-button ${buttonClass}" value="add or remove from cart" data-id="${id}"><div class="cart-icon"></div>${buttonText}</button>`;
+    return `<button class="cart-button ${buttonClass}" value="add or remove from cart" data-id="${id}"><img class="cart-icon"></div>${buttonText}</button>`;
 }

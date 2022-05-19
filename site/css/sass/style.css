@@ -173,7 +173,6 @@ main {
   background-size: cover;
   width: 40px;
   height: 39px;
-  background-image: url("../../../../../assets/icon/cart-add.png");
 }
 
 .invalid-input {
