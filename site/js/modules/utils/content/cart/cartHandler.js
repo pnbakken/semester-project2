@@ -34,11 +34,11 @@ export function attachCart(products) {
         if (inCart) {
             console.log(button + " is added to cart");
             button.classList.add("added-cart");
-            button.innerText = "In cart";
+            button.innerHTML = `<div class="cart-icon"></div>In cart`;
         } else {
-            button.classList.remove("in-cart");
+            button.classList.remove("in-cart", "added-cart");
             console.log(button + " is removed from cart");
-            button.innerText = "Add to cart";
+            button.innerHTML = `<div class="cart-icon"></div>Add to cart`;
         }
     }
 }

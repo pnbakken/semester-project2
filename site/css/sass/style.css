@@ -167,12 +167,36 @@ main {
   font-family: "Raleway", sans-serif;
   padding: 5px 10px;
   display: flex;
+  align-items: center;
+  justify-content: space-between;
   gap: 5px;
+  width: 150px;
+  transition: 0.5s;
 }
 .cart-button .cart-icon {
-  background-size: cover;
-  width: 40px;
-  height: 39px;
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
+  background: url("../../../../../assets/icon/cart-add.svg");
+  width: 35px;
+  height: 35px;
+}
+
+.in-cart {
+  background: red;
+  color: white;
+  border: none;
+}
+.in-cart .cart-icon {
+  background-image: url("../../../../../assets/icon/cart-remove.svg");
+}
+
+.added-cart {
+  background: #096B72;
+  color: white;
+  border: none;
+}
+.added-cart .cart-icon {
+  background-image: url("../../../../../assets/icon/cart-added.svg");
 }
 
 .invalid-input {
