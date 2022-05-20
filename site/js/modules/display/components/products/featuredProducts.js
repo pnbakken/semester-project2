@@ -17,7 +17,7 @@ export default async function featuredProducts() {
         featuredProducts = products.filter( (product) => (product.featured)); 
     } else featuredProducts = null;
     displayFeaturedProducts(featuredProducts, featuredContainer);
-    attachCart(featuredProducts);
+    attachCart(featuredProducts, "./pages/cart.html");
 
 } 
 

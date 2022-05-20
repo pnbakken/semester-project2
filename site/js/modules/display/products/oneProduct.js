@@ -15,7 +15,7 @@ if (searchParams.has("product_id")) {
 
 if (id) {
     singleProduct(id, productWrapper);
-    attachCart(singleProduct);
+    attachCart(singleProduct, "./cart.html");
 }
 
 commonSearch("./products.html");

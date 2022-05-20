@@ -20,11 +20,13 @@
 }
 
 .in-cart {
-    background: red;
     color: white;
-    border-color: red;
+    background: $color-gold;
+    border-color: $color-gold;
+    // background: $color-red;
+    // border-color: $color-red;
     .cart-icon {
-        background-image: url("../../../../../assets/icon/cart-remove.svg");
+        background-image: url("../../../../../assets/icon/cart-checkout.svg");
     }
 }
 

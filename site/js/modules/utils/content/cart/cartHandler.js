@@ -3,13 +3,13 @@ import { getFromLocal, removeStorageItem, saveToLocal } from "../../storage/stor
 
 let productList = [];
 
-function cartHandler(itemID) {
+function cartHandler(itemID, pathToCheckout) {
     
     const inCart = checkCart(itemID);
     
 
     if (inCart) {
-        removeFromCart(itemID);
+        location.href= pathToCheckout;
         return false;
     } else {
         
@@ -18,13 +18,13 @@ function cartHandler(itemID) {
     }
 }
 
-export function attachCart(products) {
+export function attachCart(products, pathToCheckout) {
     productList = products;
     const cartButtons = document.querySelectorAll(".cart-button");
     cartButtons.forEach( (button) => {
         button.addEventListener("click", (event) => {
             event.preventDefault();
-            const inCart = cartHandler(button.dataset.id);
+            const inCart = cartHandler(button.dataset.id, pathToCheckout);
             cartButtonClassToggle(inCart, button);
         });
     });
@@ -34,11 +34,11 @@ export function attachCart(products) {
         if (inCart) {
             console.log(button + " is added to cart");
             button.classList.add("added-cart");
-            button.innerHTML = `<div class="cart-icon"></div>In cart`;
+            button.innerHTML = `In cart <div class="cart-icon"></div>`;
         } else {
             button.classList.remove("in-cart", "added-cart");
             console.log(button + " is removed from cart");
-            button.innerHTML = `<div class="cart-icon"></div>Add to cart`;
+            button.innerHTML = `Add to cart <div class="cart-icon"></div>`;
         }
     }
 }
@@ -60,7 +60,13 @@ export function checkCart(itemID) {
 
 function addToCart(itemID) {
     console.log(productList);
-    const product = productList.find((item) => item.id === parseInt(itemID));
+    let product;
+    if (productList.length > 1) {
+        product = productList.find((item) => item.id === parseInt(itemID));
+    } else {
+        product = productList;
+    } 
+    
     console.log(itemID);
     console.log(product);
     if (getStoredCart()) {

@@ -19,7 +19,7 @@ function buildProductDisplay(products, target, heading) {
     target.innerHTML =`<h1>${heading}</h1>`;
     target.innerHTML += productsToHTML(products);
 
-    attachCart(products);
+    attachCart(products, "./cart.html");
 }
 
 function productsToHTML(products) {

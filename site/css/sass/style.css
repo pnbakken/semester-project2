@@ -189,12 +189,12 @@ main {
 }
 
 .in-cart {
-  background: red;
   color: white;
-  border-color: red;
+  background: #dac352;
+  border-color: #dac352;
 }
 .in-cart .cart-icon {
-  background-image: url("../../../../../assets/icon/cart-remove.svg");
+  background-image: url("../../../../../assets/icon/cart-checkout.svg");
 }
 
 .added-cart {
@@ -207,7 +207,7 @@ main {
 }
 
 .invalid-input {
-  border-color: red;
+  border-color: #EF6F6C;
 }
 
 footer {
@@ -265,7 +265,7 @@ footer {
     width: 45%;
   }
 }
-@media (max-width: 600px) {
+@media (max-width: 666px) {
   .products-container .product {
     width: 90%;
   }
