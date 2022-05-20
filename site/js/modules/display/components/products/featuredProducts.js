@@ -47,11 +47,11 @@ function displayFeaturedProducts(featuredProducts, target) {
     }
 
     function featuredProductToHTML(product) {
-        const {id, title, price, image} = product;
+        const {id, title, price, image_url} = product;
 
         return `<div class="product featured-product">
                     <a class="product-header-link" href="./pages/one-product.html?product_id=${id}">
-                        <div class="product-image featured-product-image" style="background-image:url('${image}');"></div>
+                        <div class="product-image featured-product-image" style="background-image:url('${image_url}');"></div>
                         <span class="product-title featured-product-title">${title}</span>
                     </a>
                     <div class="price-and-cart">

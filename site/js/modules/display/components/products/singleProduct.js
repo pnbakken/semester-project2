@@ -17,7 +17,12 @@ function displaySingleProduct(product, target) {
     } else createMessage(target, "error", "Oops, looks like something went wrong");
     
     function singleProductHTML(product) {
-        let html = `<h1>${product.title}</h1>`;
+        let html = `<div class="single-product-image"></div>
+                    <h1>${product.title}</h1>
+                    <div class="single-product-details">
+                        <p class="product-description">
+                            ${product.title}
+                    </div>`;
 
         return html;
     }
