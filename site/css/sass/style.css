@@ -190,8 +190,8 @@ main {
 
 .in-cart {
   color: black;
-  background: #dac352;
-  border-color: #dac352;
+  background: #e9d158;
+  border-color: #e9d158;
 }
 .in-cart .cart-icon {
   background-image: url("../../../../../assets/icon/cart-checkout.svg");

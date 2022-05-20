@@ -17,14 +17,15 @@ function displaySingleProduct(product, target) {
     console.log(product);
     if (product !== null) {
         target.innerHTML = singleProductHTML(product);
+        
     } else createMessage(target, "error", "Oops, looks like something went wrong");
     
     function singleProductHTML(product) {
-        let html = `<div class="single-product-image"></div>
+        let html = `<div class="product-image single-image" style="background-image: url('${product.image_url}');"></div>
                     <h1>${product.title}</h1>
                     <div class="single-product-details">
                         <p class="product-description">
-                            ${product.title}
+                            ${product.description}
                         </p>
                         <div class="purchase-group">
                             <span class="product-price single-price">${product.price}</span>

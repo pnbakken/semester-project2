@@ -47,8 +47,8 @@ async function displayEditProduct(id) {
         featured.checked = product.featured;
         description.value = product.description;
 
-        setBackgroundImage(product.image, productImage);
-        imageURL.value = product.image;
+        setBackgroundImage(product.image_url, productImage);
+        imageURL.value = product.image_url;
 
         const deleteButton = document.querySelector("#delete-product");
         deleteButton.style = "display: inline";

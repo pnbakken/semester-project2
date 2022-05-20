@@ -1,6 +1,7 @@
 import setBackgroundImage from "../../utils/content/setBackgroundImage.js";
 import { baseURL } from "../../utils/network/baseUrl.js";
 import fetchData from "../../utils/network/fetchData.js";
+import createMessage from "./common/message.js";
 
 export default async function heroBanner() {
     const bannerURL = baseURL + "/home";
@@ -12,6 +13,7 @@ export default async function heroBanner() {
         buildHeroBanner(heroImage, banner);
     } catch (err) {
         console.error(err);
+        createMessage(banner, "error", "Oops, looks like something went wrong");
     }                        
 }
 
