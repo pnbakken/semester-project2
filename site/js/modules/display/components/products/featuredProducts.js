@@ -55,7 +55,7 @@ function displayFeaturedProducts(featuredProducts, target) {
                         <span class="product-title featured-product-title">${featuredProduct.title}</span>
                     </a>
                     <div class="price-and-cart">
-                        <span class="product-price featured-product-price">${featuredProduct.price}</span>
+                        <span class="product-price featured-product-price">${featuredProduct.price},-</span>
                         ${createCartButton(featuredProduct.id)}
                     </div>
                     <a class="pseudo-button" href="./pages/one-product.html?product_id=${featuredProduct.id}">View</a>

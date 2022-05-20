@@ -1,6 +1,6 @@
 .cart-button {
     font-weight: 500;
-    font-family: $font-heading;
+    font-family: $font-main;
     padding: 5px 10px;
     display: flex;
     align-items: center;
@@ -8,20 +8,21 @@
     gap: 5px;
     width: 150px;
     transition: 0.5s;
+    border-radius: 0.2rem;
 
     .cart-icon {
         background-size:contain!important;
         background-repeat: no-repeat!important;
         background: url("../../../../../assets/icon/cart-add.svg");
         width: 35px;
-        height: 35px;
+        height: 30px;
     }
 }
 
 .in-cart {
     background: red;
     color: white;
-    border: none;
+    border-color: red;
     .cart-icon {
         background-image: url("../../../../../assets/icon/cart-remove.svg");
     }
@@ -30,7 +31,7 @@
 .added-cart {
     background: $color-green;
     color: white;
-    border: none;
+    border-color: $color-green;
     .cart-icon {
         background-image: url("../../../../../assets/icon/cart-added.svg");
     }

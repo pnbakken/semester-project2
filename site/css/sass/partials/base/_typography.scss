@@ -1,7 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;700&family=Trirong:ital,wght@0,700;1,500&display=swap');
 
 $font-display: "Trirong", serif;
-$font-heading: "Raleway", sans-serif;
+$font-main: "Raleway", sans-serif;
+
+body {
+    font-family: $font-main;
+}
 
 .banner-link {
     font-family: $font-display;
@@ -13,7 +17,6 @@ $font-heading: "Raleway", sans-serif;
 }
 
 .pseudo-button {
-    font-family: $font-heading;
     font-style: normal;
     font-weight: 600;
     font-size: 24px;
@@ -21,7 +24,6 @@ $font-heading: "Raleway", sans-serif;
 }
 
 .nav-link {
-    font-family: $font-heading;
     font-weight: 700;
     color: $color-purple;
 
@@ -33,7 +35,6 @@ $font-heading: "Raleway", sans-serif;
 }
 
 .list-heading {
-    font-family: $font-heading;
     font-size: 40px;
     font-weight: 600;
 }
@@ -43,8 +44,12 @@ $font-heading: "Raleway", sans-serif;
 }
 
 .product-title {
-    font-family: $font-heading;
     font-weight: 700;
     font-size:24px;
     color: $color-purple;
+}
+
+.product-price {
+    font-size: 24px;
+    font-weight: 300;
 }
