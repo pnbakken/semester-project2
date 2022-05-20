@@ -16,7 +16,7 @@ function createList(products) {
         target.innerHTML = "";
 
         products.forEach((product) => {
-           buildTableRow(unpackProductDetails(product), target);
+           buildTableRow(product, target);
         });
         
 

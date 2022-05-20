@@ -47,18 +47,18 @@ function displayFeaturedProducts(featuredProducts, target) {
     }
 
     function featuredProductToHTML(product) {
-        const featuredProduct = unpackProductDetails(product);
+        const {id, title, price, image} = product;
 
         return `<div class="product featured-product">
-                    <a class="product-header-link" href="./pages/one-product.html?product_id=${featuredProduct.id}">
-                        <div class="product-image featured-product-image" style="background-image:url('${featuredProduct.image}');"></div>
-                        <span class="product-title featured-product-title">${featuredProduct.title}</span>
+                    <a class="product-header-link" href="./pages/one-product.html?product_id=${id}">
+                        <div class="product-image featured-product-image" style="background-image:url('${image}');"></div>
+                        <span class="product-title featured-product-title">${title}</span>
                     </a>
                     <div class="price-and-cart">
-                        <span class="product-price featured-product-price">${featuredProduct.price},-</span>
-                        ${createCartButton(featuredProduct.id)}
+                        <span class="product-price featured-product-price">${price},-</span>
+                        ${createCartButton(id)}
                     </div>
-                    <a class="pseudo-button" href="./pages/one-product.html?product_id=${featuredProduct.id}">View</a>
+                    <a class="pseudo-button" href="./pages/one-product.html?product_id=${id}">View</a>
                 </div>`; 
     }
     

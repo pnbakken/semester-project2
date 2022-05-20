@@ -17,16 +17,16 @@ export default async function productDisplay() {
 
 function buildProductDisplay(products, target, heading) {
     target.innerHTML =`<h1>${heading}</h1>`;
-    target.innerHTML += productsToHTML(products, target);
+    target.innerHTML += productsToHTML(products);
 
     attachCart(products);
 }
 
-function productsToHTML(products, target) {
+function productsToHTML(products) {
 
     let generatedHTML = `<div class="product-list">`;
     products.forEach((product) => {
-        const inCart = checkCart(product.id)
+        
         generatedHTML += `<div class="product">
                                 <a class="product-header-link" href="./one-product.html?product_id=${product.id}">
                                     <div class="product-image" style="background-image:url('${product.image_url}');"></div>

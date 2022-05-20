@@ -28,7 +28,7 @@ if (newProduct) {
 
 
 async function displayEditProduct(id) {
-    const product = unpackProductDetails(await getOneProduct(id));
+    const product = await getOneProduct(id);
 
     populateEditFields(product);
 

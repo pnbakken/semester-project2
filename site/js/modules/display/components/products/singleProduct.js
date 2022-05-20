@@ -1,16 +1,24 @@
 import getOneProduct from "../../../utils/content/products/getOneProduct.js";
+import addLoader from "../common/loader.js";
+import createMessage from "../common/message.js";
 import { unpackProductDetails } from "./productDisplay.js";
 
 export default async function singleProduct(id, target) {
-    const product = unpackProductDetails(await getOneProduct(id));
+    addLoader(target);
+    const product = await getOneProduct(id);
     displaySingleProduct(product, target);
 
 }
 
 function displaySingleProduct(product, target) {
     console.log(product);
-    target.innerHTML = `<p>${product.title}</p>
-                        <p>${product.price}</p>
-                        <p>${product.description}</p>`;
+    if (product !== null) {
+        target.innerHTML = singleProductHTML(product);
+    } else createMessage(target, "error", "Oops, looks like something went wrong");
     
+    function singleProductHTML(product) {
+        let html = `<h1>${product.title}</h1>`;
+
+        return html;
+    }
 }
