@@ -28,13 +28,15 @@ function productsToHTML(products, target) {
     products.forEach((product) => {
         const inCart = checkCart(product.id)
         generatedHTML += `<div class="product">
-                                
+                                <a class="product-header-link" href="./one-product.html?product_id=${product.id}">
                                     <div class="product-image" style="background-image:url('${product.image_url}');"></div>
-                                    <h4 class="product-name">${product.title}</h4>
+                                    <span class="product-title">${product.title}</h4>
+                                </a>
+                                <div class="price-and-cart">
+                                    <span class="product-price">${product.price},-</span>
                                     ${createCartButton(product.id)}
-                                    <br>
-                                    ${product.price}
-                                    <a class="item-button item-link" href="./one-product.html?product_id=${product.id}">View</a>
+                                </div>
+                                <a class="pseudo-button" href="./one-product.html?product_id=${product.id}">View</a>
                                 
                             </div>`
     });

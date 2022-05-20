@@ -1,5 +1,5 @@
 .products-container {
-    width: 100%;
+    width: 80%;
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -9,26 +9,60 @@
     .product-list {
         display: flex;
         flex-wrap: wrap;
-        gap: 40px;
-        justify-content: center;
+        gap: 50px;
         width: 100%;
+        justify-content: space-evenly;
     }
 
-    .product-list-item {
-        display: flex;
-        flex-direction: column;
-        width: 20%;
+    .product {
+        padding: 1rem;
+            background: white;
+            width: 22%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            gap:15px;
+            border: 1px solid $color-deep-blue;
+            box-shadow: 2px 4px 4px 0 #b8b8b8;
 
-
-        @media (max-width: 768px) {
-            width: 45%;
-        }
-        @media (max-width: 550px) {
-            width: 66%;
-        }
+            @media(max-width: 1400px) {
+                width: 28%;
+            }
+            @media(max-width: 1250px) {
+                width: 33%;
+            }
+            @media(max-width: 1024px) {
+                width: 38%;
+            }
+            @media(max-width: 768px) {
+                padding: 0.5rem;
+                width: 45%;
+            }
+            @media(max-width: 600px) {
+                width: 90%;
+            }
+            @media(max-width: 400px) {
+                width: 100%;
+            }
 
         
+            .product-header-link {
+                width: 100%;
+                text-align: center;
+                display:flex;
+                flex-direction: column;
+                gap: 5px;
+                text-decoration: none;
+            }
 
+            .price-and-cart {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                align-items: center;
+                gap: 20px;
+            }
            
         
     }
@@ -36,8 +70,8 @@
 
 .product-image {
     width: 100%;
-    height: 300px;
-    background-size: cover;
+    height: 250px;
+    background-size:cover;
     background-repeat: no-repeat;
     background-position: center;
 }
