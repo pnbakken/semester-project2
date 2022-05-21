@@ -7,7 +7,7 @@ export default function createCartButton( id) {
     let buttonText;
     if (inCart) {
         buttonClass = "in-cart";
-        buttonText = "Checkout";
+        buttonText = "Remove";
     } else {
         buttonClass = "";
         buttonText = "Add to cart";

@@ -9,7 +9,7 @@ function cartHandler(itemID, pathToCheckout) {
     
 
     if (inCart) {
-        location.href= pathToCheckout;
+        removeFromCart(itemID);
         return false;
     } else {
         
