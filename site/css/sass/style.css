@@ -425,6 +425,11 @@ footer {
     width: 90%;
   }
 }
+.product-wrapper .single-product-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .product-wrapper .product-description {
   width: 80%;
 }
