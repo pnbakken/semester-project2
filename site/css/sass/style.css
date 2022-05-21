@@ -433,6 +433,16 @@ footer {
 .product-wrapper .product-description {
   width: 80%;
 }
+@media (max-width: 500px) {
+  .product-wrapper .product-description {
+    width: 90%;
+  }
+}
+@media (max-width: 420px) {
+  .product-wrapper .product-description {
+    width: 95%;
+  }
+}
 
 #new-product-image {
   width: 100px;
