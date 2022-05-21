@@ -49,11 +49,13 @@ export function checkCart(itemID) {
     let check = false;
     if (cart) {
         cart.forEach( (cartItem) => {
-            if (parseInt(itemID) === cartItem.id) {
-                check = true;
-                console.log("item already in cart");
+            if (cartItem !== null) {
+                if (parseInt(itemID) === cartItem.id) {
+                    check = true;
+                    console.log("item already in cart");
+                }
             }
-        })
+        });
     }
     return check;
 }

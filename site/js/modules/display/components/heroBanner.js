@@ -1,13 +1,14 @@
 import setBackgroundImage from "../../utils/content/setBackgroundImage.js";
 import { baseURL } from "../../utils/network/baseUrl.js";
 import fetchData from "../../utils/network/fetchData.js";
+import addLoader from "./common/loader.js";
 import createMessage from "./common/message.js";
 
 export default async function heroBanner() {
     const bannerURL = baseURL + "/home";
 
     const banner = document.querySelector(".hero-banner");
-
+    addLoader(banner);
     try {
         const heroImage = await fetchData(bannerURL);
         buildHeroBanner(heroImage, banner);
