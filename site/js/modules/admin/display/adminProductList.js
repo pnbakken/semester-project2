@@ -25,7 +25,7 @@ function createList(products) {
             target.innerHTML += `<div class="product-line">
                                     <a href="./product-manager.html?product_id=${product.id}">${product.title}</a>
                                     ${product.id}
-                                    ${product.price}`;
+                                    ${product.price},-`;
         }
     }
 }

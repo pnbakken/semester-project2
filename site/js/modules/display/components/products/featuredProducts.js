@@ -1,9 +1,9 @@
 import { attachCart } from "../../../utils/content/cart/cartHandler.js";
 import getAllProducts from "../../../utils/content/products/getAllProducts.js";
 import createCartButton from "../cart/cartButton.js";
+import createCTA from "../common/createCTA.js";
 import addLoader from "../common/loader.js";
 import createMessage from "../common/message.js";
-import { unpackProductDetails } from "./productDisplay.js";
 
 export default async function featuredProducts(itemPath) {
     
@@ -39,10 +39,7 @@ function displayFeaturedProducts(featuredProducts, target, itemPath) {
         })
 
         html += `</div>
-                 <div class="content-block">
-                    <p class="white-text">Check out more of our great items</p>
-                    <a class="pseudo-button green-bg" href="${itemPath}products.html">See more</a>
-                 </div>`;
+                 ${createCTA("See more of our beautiful flowers", itemPath)}`;
         return html;
     }
 
