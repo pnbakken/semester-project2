@@ -24,7 +24,7 @@
             justify-content: space-between;
             gap:15px;
             border: 1px solid $color-deep-blue;
-            box-shadow: 2px 4px 4px 0 #b8b8b8;
+            box-shadow: 2px 4px 4px 0 $color-shadow;
 
             @media(max-width: 1400px) {
                 width: 28%;
@@ -54,18 +54,16 @@
                 flex-direction: column;
                 gap: 5px;
                 text-decoration: none;
-            }
-
-            .price-and-cart {
-                display: flex;
-                flex-direction: column;
-                justify-content: space-between;
-                align-items: center;
-                gap: 20px;
-            }
-           
-        
+            }                  
     }
+}
+
+.price-and-cart {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
 }
 
 .product-image {

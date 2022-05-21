@@ -1,5 +1,6 @@
 import { getStoredCart, removeFromCart } from "../../../utils/content/cart/cartHandler.js";
 import { commonSearch } from "../../../utils/content/search/search.js";
+import setBreadcrumb from "../common/breadcrumb.js";
 
 const cartContainer = document.querySelector(".cart-display-container");
 
@@ -7,6 +8,7 @@ const cartContainer = document.querySelector(".cart-display-container");
     const cart = getStoredCart();
     generateCartHTML(cart, cartContainer);
     commonSearch("./products.html");
+    setBreadcrumb("Cart");
 })();
 
 function generateCartHTML(cart, target) {

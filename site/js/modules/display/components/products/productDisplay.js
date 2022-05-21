@@ -3,6 +3,7 @@ import getAllProducts from "../../../utils/content/products/getAllProducts.js";
 import { doSearch, productSearch } from "../../../utils/content/search/search.js";
 import { baseURL } from "../../../utils/network/baseUrl.js";
 import createCartButton from "../cart/cartButton.js";
+import setBreadcrumb from "../common/breadcrumb.js";
 
 export default async function productDisplay() {
     const container = document.querySelector(".products-container");
@@ -61,9 +62,11 @@ function checkSearch(products, target) {
     const urlParams = new URLSearchParams(queryString);
     console.log(urlParams.get("search_query"));
     if (urlParams.has("search_query")) {
-        const searchResults = doSearch(urlParams.get("search_query"), products);
+        const query = urlParams.get("search_query");
+        const searchResults = doSearch(query, products);
         console.log(searchResults);
-        buildProductDisplay(searchResults, target, `Search results for "${urlParams.get("search_query")}"`);
+        buildProductDisplay(searchResults, target, `Search results for "${query}"`);
+        setBreadcrumb(`Search: "${query}"`);
     } else {
         buildProductDisplay(products, target, "Products");
     }

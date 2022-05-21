@@ -26,7 +26,7 @@ function buildHeroBanner(heroImage, target) {
 
     function setBannerText(image) {
         return `<a class="banner-link" href="./pages/products.html">
-                        <p class="hero-text">${image.alt}</p>
+                        <h1 class="hero-text">${image.alt}</h1>
                         <p class="pseudo-button">See more</p>
                     </a>`;
     
