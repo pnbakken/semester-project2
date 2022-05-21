@@ -29,13 +29,13 @@ function displaySingleProduct(product, target) {
         let html = `<div class="product-image single-image" style="background-image: url('${product.image_url}');"></div>
                     <h1 class="title-heading">${product.title}</h1>
                     <div class="single-product-details">
-                        <p class="product-description">
-                            ${product.description}
-                        </p>
                         <div class="price-and-cart pc-single">
                             <span class="product-price single-price">${product.price},-</span>
                             ${createCartButton(product.id)}
                         </div>
+                        <p class="product-description">
+                            ${product.description}
+                        </p>
                     </div>`;
 
         return html;

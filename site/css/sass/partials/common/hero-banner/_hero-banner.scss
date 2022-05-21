@@ -20,6 +20,7 @@
         text-align: center;
         border-radius: 0.25rem;
         display: flex;
+        gap: 15px;
         flex-direction: column;
 
         @media(max-width: 768px) {
