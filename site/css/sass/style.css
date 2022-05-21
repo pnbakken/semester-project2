@@ -233,6 +233,11 @@ footer {
   padding: 1rem;
   justify-content: center;
 }
+@media (max-width: 500px) {
+  .products-container {
+    width: 95%;
+  }
+}
 .products-container .product-list {
   display: flex;
   flex-wrap: wrap;
