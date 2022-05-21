@@ -19,6 +19,7 @@ function displaySingleProduct(product, target) {
     console.log(product);
     if (product !== null) {
         target.innerHTML = singleProductHTML(product);
+        document.querySelector("title").innerText += product.title;
         
     } else createMessage(target, "error", "Oops, looks like something went wrong");
     
