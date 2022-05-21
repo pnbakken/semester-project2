@@ -238,14 +238,16 @@ footer {
     width: 95%;
   }
 }
-.products-container .product-list {
+
+.product-list {
   display: flex;
   flex-wrap: wrap;
   gap: 50px;
   width: 100%;
   justify-content: space-evenly;
 }
-.products-container .product {
+
+.product {
   padding: 1rem;
   background: white;
   width: 22%;
@@ -258,37 +260,37 @@ footer {
   box-shadow: 2px 4px 4px 0 #b8b8b8;
 }
 @media (max-width: 1400px) {
-  .products-container .product {
+  .product {
     width: 28%;
   }
 }
 @media (max-width: 1250px) {
-  .products-container .product {
+  .product {
     width: 33%;
   }
 }
 @media (max-width: 1024px) {
-  .products-container .product {
+  .product {
     width: 38%;
   }
 }
 @media (max-width: 768px) {
-  .products-container .product {
+  .product {
     padding: 0.5rem;
     width: 45%;
   }
 }
 @media (max-width: 666px) {
-  .products-container .product {
+  .product {
     width: 90%;
   }
 }
 @media (max-width: 400px) {
-  .products-container .product {
+  .product {
     width: 100%;
   }
 }
-.products-container .product .product-header-link {
+.product .product-header-link {
   width: 100%;
   text-align: center;
   display: flex;
@@ -338,60 +340,7 @@ footer {
   justify-content: space-evenly;
 }
 .featured-container .featured-product-list .featured-product {
-  padding: 1rem;
-  background: white;
-  width: 22%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  gap: 15px;
-}
-@media (max-width: 1400px) {
-  .featured-container .featured-product-list .featured-product {
-    width: 28%;
-  }
-}
-@media (max-width: 1250px) {
-  .featured-container .featured-product-list .featured-product {
-    width: 33%;
-  }
-}
-@media (max-width: 1024px) {
-  .featured-container .featured-product-list .featured-product {
-    width: 38%;
-  }
-}
-@media (max-width: 768px) {
-  .featured-container .featured-product-list .featured-product {
-    padding: 0.5rem;
-    width: 45%;
-  }
-}
-@media (max-width: 600px) {
-  .featured-container .featured-product-list .featured-product {
-    width: 90%;
-  }
-}
-@media (max-width: 400px) {
-  .featured-container .featured-product-list .featured-product {
-    width: 100%;
-  }
-}
-.featured-container .featured-product-list .featured-product .product-header-link {
-  width: 100%;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  text-decoration: none;
-}
-.featured-container .featured-product-list .featured-product .price-and-cart {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  gap: 20px;
+  box-shadow: none;
 }
 
 .product-wrapper {
