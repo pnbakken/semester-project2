@@ -5,7 +5,7 @@ import addLoader from "../common/loader.js";
 import createMessage from "../common/message.js";
 import { unpackProductDetails } from "./productDisplay.js";
 
-export default async function featuredProducts() {
+export default async function featuredProducts(itemPath) {
     
     const featuredContainer = document.querySelector(".featured-container");
     addLoader(featuredContainer);
@@ -16,41 +16,41 @@ export default async function featuredProducts() {
     if (products !== null) {
         featuredProducts = products.filter( (product) => (product.featured)); 
     } else featuredProducts = null;
-    displayFeaturedProducts(featuredProducts, featuredContainer);
+    displayFeaturedProducts(featuredProducts, featuredContainer, itemPath);
     attachCart(featuredProducts, "./pages/cart.html");
 
 } 
 
-function displayFeaturedProducts(featuredProducts, target) {
+function displayFeaturedProducts(featuredProducts, target, itemPath) {
     console.log(target);
     if (featuredProducts) {
-       target.innerHTML = createFeaturedList(featuredProducts);
+       target.innerHTML = createFeaturedList(featuredProducts, itemPath);
     } else {
         createMessage(target, "error-message", "Something went wrong, please try again");
     }
 
 
-    function createFeaturedList(featuredProducts) {
+    function createFeaturedList(featuredProducts, itemPath) {
         let html = `<h2 class="list-heading featured-heading">Featured products</h2>
                     <div class="product-list featured-product-list">`;
 
         featuredProducts.forEach((product) => {
-            html += featuredProductToHTML(product);
+            html += featuredProductToHTML(product, itemPath);
         })
 
         html += `</div>
                  <div class="content-block">
                     <p class="white-text">Check out more of our great items</p>
-                    <a class="pseudo-button green-bg" href="./pages/products.html">See more</a>
+                    <a class="pseudo-button green-bg" href="${itemPath}products.html">See more</a>
                  </div>`;
         return html;
     }
 
-    function featuredProductToHTML(product) {
+    function featuredProductToHTML(product, itemPath) {
         const {id, title, price, image_url} = product;
 
         return `<div class="product featured-product">
-                    <a class="product-header-link" href="./pages/one-product.html?product_id=${id}">
+                    <a class="product-header-link" href="${itemPath}one-product.html?product_id=${id}">
                         <div class="product-image featured-product-image" style="background-image:url('${image_url}');"></div>
                         <span class="product-title featured-product-title">${title}</span>
                     </a>
@@ -58,7 +58,7 @@ function displayFeaturedProducts(featuredProducts, target) {
                         <span class="product-price featured-product-price">${price},-</span>
                         ${createCartButton(id)}
                     </div>
-                    <a class="pseudo-button" href="./pages/one-product.html?product_id=${id}">View</a>
+                    <a class="pseudo-button" href="${itemPath}one-product.html?product_id=${id}">View</a>
                 </div>`; 
     }
     

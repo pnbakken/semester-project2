@@ -4,6 +4,6 @@ import {commonSearch} from "../../utils/content/search/search.js";
 
 (function index() {
     heroBanner();
-    featuredProducts();
+    featuredProducts("./pages/");
     commonSearch("./pages/products.html");
 })();
