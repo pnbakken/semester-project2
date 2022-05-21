@@ -43,7 +43,10 @@ async function productImage() {
             const response = await fetch(url);
             if (response.ok) {
                 setBackgroundImage(url, document.querySelector("#new-product-image"));
-            }
+            } else {
+                document.querySelector("#new-product-image").innerText = "Invalid image url";
+                document.querySelector("#new-product-image").style= "background: none; display: block;";
+            } 
             console.log(response);
         } catch(err) {
             console.error(err);
