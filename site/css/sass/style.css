@@ -145,9 +145,9 @@ main {
   background-size: cover;
   background-position: center;
   height: 80vh;
-  width: 100%;
+  width: 99%;
   position: relative;
-  border-radius: 0.5%;
+  border-radius: 0.1rem;
   margin-bottom: 150px;
 }
 @media (max-width: 768px) {
@@ -322,6 +322,7 @@ footer {
   align-items: center;
   justify-content: center;
   gap: 50px;
+  border-radius: 0.2rem;
 }
 @media (max-width: 768px) {
   .featured-container {
@@ -419,7 +420,7 @@ footer {
 }
 .product-wrapper .single-image {
   width: 70%;
-  height: 550px;
+  height: 500px;
 }
 @media (max-width: 768px) {
   .product-wrapper .single-image {
@@ -449,6 +450,9 @@ footer {
   .product-wrapper .product-description {
     width: 95%;
   }
+}
+.product-wrapper .pc-single {
+  flex-direction: row;
 }
 
 #new-product-image {

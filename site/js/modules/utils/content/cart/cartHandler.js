@@ -3,7 +3,7 @@ import { getFromLocal, removeStorageItem, saveToLocal } from "../../storage/stor
 
 let productList = [];
 
-function cartHandler(itemID, pathToCheckout) {
+function cartHandler(itemID) {
     
     const inCart = checkCart(itemID);
     
@@ -18,13 +18,13 @@ function cartHandler(itemID, pathToCheckout) {
     }
 }
 
-export function attachCart(products, pathToCheckout) {
+export function attachCart(products) {
     productList = products;
     const cartButtons = document.querySelectorAll(".cart-button");
     cartButtons.forEach( (button) => {
         button.addEventListener("click", (event) => {
             event.preventDefault();
-            const inCart = cartHandler(button.dataset.id, pathToCheckout);
+            const inCart = cartHandler(button.dataset.id);
             cartButtonClassToggle(inCart, button);
         });
     });
