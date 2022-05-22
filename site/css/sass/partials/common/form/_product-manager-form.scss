@@ -15,6 +15,10 @@
     .input-label-group {
         display: flex;
         flex-direction: column;
+
+        label {
+            font-weight: 600;
+        }
     }
 
     .product-text {

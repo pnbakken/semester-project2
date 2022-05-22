@@ -253,6 +253,9 @@ main {
   display: flex;
   flex-direction: column;
 }
+#product-form .input-label-group label {
+  font-weight: 600;
+}
 #product-form .product-text {
   display: flex;
   flex-direction: column;
