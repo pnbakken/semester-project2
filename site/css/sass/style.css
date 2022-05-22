@@ -113,12 +113,12 @@ main {
 
 .common-navbar {
   padding: 1.5rem;
-  padding-bottom: 0.25rem;
+  padding-bottom: 0.5rem;
   margin-bottom: 1rem;
   width: 100%;
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
+  align-items: baseline;
   border-bottom: 2px solid #3E1929;
 }
 @media (max-width: 425px) {
@@ -128,6 +128,7 @@ main {
 }
 .common-navbar .navbar-brand {
   width: 200px;
+  margin-right: 30px;
 }
 @media (max-width: 425px) {
   .common-navbar .navbar-brand {
@@ -139,6 +140,10 @@ main {
 }
 .common-navbar .navbar-collapse {
   align-items: baseline;
+}
+.common-navbar .navbar-nav {
+  display: flex;
+  gap: 15px;
 }
 .common-navbar .navbar-nav .nav-link {
   padding: 0;
@@ -329,9 +334,11 @@ input#search-input {
 
 footer {
   background: #0C1114;
-  color: white;
   padding: 1.5rem;
   margin-top: 150px;
+}
+footer a {
+  color: white;
 }
 
 .products-container {
