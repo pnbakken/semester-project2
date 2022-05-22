@@ -234,6 +234,10 @@ main {
   gap: 10px;
 }
 
+.logout-button {
+  display: none;
+}
+
 @media (max-width: 500px) {
   #product-manager-display {
     width: 80%;
