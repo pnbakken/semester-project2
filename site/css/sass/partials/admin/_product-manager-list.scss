@@ -1,0 +1,31 @@
+.main-admin-panel {
+    width: 100%;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+}
+
+.product-list-container {
+    width: 50%;
+}
+
+.product-manager-list {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 20px;
+}
+
+.product-manager-item {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid $color-shadow;
+
+    .cart-image {
+        width:90px;
+        height: 90px;
+    }
+}

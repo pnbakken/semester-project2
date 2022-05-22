@@ -29,12 +29,15 @@ function createList(products, target) {
         html += "</div>";
         return html;
 
-        function buildTableRow(product, target) {
+        function buildTableRow(product) {
             const featured = product.featured ? "Featured" : "Not Featured";
-            return `<div class="product-manager-item">
-                                    <a href="./product-manager.html?product_id=${product.id}">${product.title}</a>
+            return `<div class="cart-item product-manager-item">
                                     ${product.id}
+                                    <div class="product-image cart-image" style="background-image: url('${product.image_url}');"></div>
+                                    <a href="./product-manager.html?product_id=${product.id}">${product.title}</a>
+                                    
                                     ${product.price},-
+                                    ${featured}
                     </div>`;
         }
     }
