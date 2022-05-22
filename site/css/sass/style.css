@@ -271,6 +271,9 @@ main {
   gap: 5px;
   align-items: baseline;
 }
+#product-form #delete-product {
+  margin-top: 100px;
+}
 
 .form-control {
   width: 35%;
