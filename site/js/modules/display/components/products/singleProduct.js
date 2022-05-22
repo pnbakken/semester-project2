@@ -1,11 +1,9 @@
-import { attachCart } from "../../../utils/content/cart/cartHandler.js";
 import getOneProduct from "../../../utils/content/products/getOneProduct.js";
 import createCartButton from "../cart/cartButton.js";
 import setBreadcrumb from "../common/breadcrumb.js";
 import addLoader from "../common/loader.js";
 import createMessage from "../common/message.js";
 import featuredProducts from "./featuredProducts.js";
-import { unpackProductDetails } from "./productDisplay.js";
 
 export default async function singleProduct(id, target) {
     addLoader(target);
@@ -14,7 +12,6 @@ export default async function singleProduct(id, target) {
     //attachCart(product) cart gets added with featuredProducts. If I attach it here it gets overwritten.
     setBreadcrumb(product.title);
     featuredProducts("./");
-
 }
 
 function displaySingleProduct(product, target) {
