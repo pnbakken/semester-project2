@@ -231,8 +231,12 @@ main {
 
 #product-form {
   display: flex;
-  flex-direction: row;
   gap: 60px;
+}
+@media (max-width: 500px) {
+  #product-form {
+    flex-direction: column;
+  }
 }
 #product-form .form-block {
   display: flex;
@@ -256,6 +260,11 @@ main {
   display: flex;
   flex-direction: column;
   gap: 7.5px;
+}
+#product-form .checkbox-group {
+  display: flex;
+  gap: 5px;
+  align-items: baseline;
 }
 
 .form-control {
