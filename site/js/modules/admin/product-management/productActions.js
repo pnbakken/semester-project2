@@ -11,7 +11,10 @@ export async function updateProduct(product, productID) {
 export async function createNewProduct(product) {
     const url = baseURL + "/products/";
     const method = "POST";
-    await sendProduct(url, product, method)
+    const result = await sendProduct(url, product, method)
+    if (result.id) {
+        window.location.href= "./product-manager.html?product_id=" + result.id;
+    }
     
 }
 
