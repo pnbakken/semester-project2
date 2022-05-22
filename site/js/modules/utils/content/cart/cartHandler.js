@@ -28,16 +28,13 @@ export function attachCart(products) {
             cartButtonClassToggle(inCart, button);
         });
     });
-    console.log("cart attached");
 
     function cartButtonClassToggle(inCart, button) {
         if (inCart) {
-            console.log(button + " is added to cart");
             button.classList.add("added-cart");
             button.innerHTML = `In cart <div class="cart-icon"></div>`;
         } else {
             button.classList.remove("in-cart", "added-cart");
-            console.log(button + " is removed from cart");
             button.innerHTML = `Add to cart <div class="cart-icon"></div>`;
         }
     }
@@ -52,7 +49,6 @@ export function checkCart(itemID) {
             if (cartItem !== null) {
                 if (parseInt(itemID) === cartItem.id) {
                     check = true;
-                    console.log("item already in cart");
                 }
             }
         });
@@ -61,7 +57,6 @@ export function checkCart(itemID) {
 }
 
 function addToCart(itemID) {
-    console.log(productList);
     let product;
     if (productList.length > 1) {
         product = productList.find((item) => item.id === parseInt(itemID));
@@ -69,8 +64,6 @@ function addToCart(itemID) {
         product = productList;
     } 
     
-    console.log(itemID);
-    console.log(product);
     if (getStoredCart()) {
         let cart = getStoredCart();
         cart.push(product);

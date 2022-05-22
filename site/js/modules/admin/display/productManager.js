@@ -14,7 +14,7 @@ let newProduct;
 
 
 if(urlParams.get("product_id")) {
-    console.log("Has product_id: " + urlParams.get("product_id"));
+    
     displayEditProduct(urlParams.get("product_id"));
     newProduct = false;
 } else {
@@ -43,7 +43,6 @@ async function displayEditProduct(id) {
     
 
     function populateEditFields(product) {
-        console.log(product);
         const title = document.querySelector("#product-title");
         const price = document.querySelector("#product-price");
         const featured = document.querySelector("#product-featured");

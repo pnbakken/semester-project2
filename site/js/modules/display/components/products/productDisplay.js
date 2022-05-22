@@ -9,7 +9,6 @@ export default async function productDisplay() {
     const container = document.querySelector(".products-container");
     const products = await getAllProducts();
     if (products) {
-        console.log("displaying products");
         checkSearch(products, container);
         
     }
@@ -60,11 +59,9 @@ export function unpackProductDetails(product) {
 function checkSearch(products, target) {
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
-    console.log(urlParams.get("search_query"));
     if (urlParams.has("search_query")) {
         const query = urlParams.get("search_query");
         const searchResults = doSearch(query, products);
-        console.log(searchResults);
         buildProductDisplay(searchResults, target, `Search results for "${query}"`);
         setBreadcrumb(`Search: "${query}"`);
     } else {

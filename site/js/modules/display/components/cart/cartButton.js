@@ -2,7 +2,6 @@ import { checkCart } from "../../../utils/content/cart/cartHandler.js";
 
 export default function createCartButton( id) {
     const inCart = checkCart(id);
-    console.log(id);
     let buttonClass
     let buttonText;
     if (inCart) {

@@ -11,7 +11,6 @@ const productWrapper = document.querySelector(".product-wrapper");
 let id;
 if (searchParams.has("product_id")) {
     id = searchParams.get("product_id");
-    console.log(searchParams.get("product_id"));
 }
 
 if (id) {

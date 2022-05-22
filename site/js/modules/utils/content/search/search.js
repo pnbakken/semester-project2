@@ -5,7 +5,6 @@ export function commonSearch(path) {
     search.addEventListener("submit", (event) => {
         event.preventDefault();
         const query = document.querySelector("#search-input").value;
-        console.log(query);
         if (query) {
             window.location.href= path + `?search_query=${query}`;
         }

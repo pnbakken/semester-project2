@@ -6,7 +6,6 @@ export async function updateProduct(product, productID) {
     const url = baseURL + "/products/" + productID;
     const method = "PUT";
     const result = await sendProduct(url, product, method)
-    console.log(result);
     handleResult(result);
 }
 

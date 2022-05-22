@@ -32,13 +32,9 @@ import clearElement from "../../display/components/common/clearElement.js";
         let valid = true;
         if (!validateLoginEmail(loginEmail)) {
             valid = false;
-            console.log(loginEmail);
-            console.log("email invalid");
         }
         if (!validatePassword(loginPassword)) {
             valid = false;
-            console.log(loginPassword);
-            console.log("password invalid");
         }
 
         return valid;
@@ -64,7 +60,6 @@ import clearElement from "../../display/components/common/clearElement.js";
             "password": loginPassword,
         };
         let user = await postData(loginURL, data);
-        console.log(user);
         if (!user.error) {
             storeCredentials(user);
             window.location.href = "./admin-panel.html";

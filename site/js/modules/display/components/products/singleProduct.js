@@ -15,7 +15,6 @@ export default async function singleProduct(id, target) {
 }
 
 function displaySingleProduct(product, target) {
-    console.log(product);
     if (product !== null) {
         target.innerHTML = singleProductHTML(product);
         document.querySelector("title").innerText += product.title;

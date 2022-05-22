@@ -1,7 +1,6 @@
 const storage = window.localStorage;
 
 export function saveToLocal(key,item) {
-    console.log("Storing " + item + " to " + key);
     storage.setItem(key, JSON.stringify(item));
 }
 

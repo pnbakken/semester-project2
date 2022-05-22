@@ -10,7 +10,6 @@ export default async function featuredProducts(itemPath) {
     const featuredContainer = document.querySelector(".featured-container");
     addLoader(featuredContainer);
     const products = await getAllProducts();
-    console.log(featuredContainer);
     let featuredProducts;
 
     if (products !== null) {
@@ -22,7 +21,6 @@ export default async function featuredProducts(itemPath) {
 } 
 
 function displayFeaturedProducts(featuredProducts, target, itemPath) {
-    console.log(target);
     if (featuredProducts) {
        target.innerHTML = createFeaturedList(featuredProducts, itemPath);
     } else {

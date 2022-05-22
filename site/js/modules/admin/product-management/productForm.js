@@ -48,7 +48,6 @@ async function productImage() {
                 document.querySelector("#new-product-image").innerText = "Invalid image url";
                 document.querySelector("#new-product-image").style= "background: none; display: block;";
             } 
-            console.log(response);
         } catch(err) {
             console.error(err);
         }
@@ -60,14 +59,12 @@ async function actionProductForm() {
     const valid = await checkValid();
     const product = collectProduct();
     if (valid) {
-        console.log("Form valid");
         if (productID) {
             updateProduct(product, productID);
         } else {
             createNewProduct(product);
         }
     } else {
-        console.log("form invalid");
         createMessage(document.querySelector(".form-message"), "error-message", "The form has one or more missing values");
     }
     
@@ -92,20 +89,16 @@ async function actionProductForm() {
 
     if (validateText(title)) {
         toggleInvalid(title, false);
-        console.log("Title valid");
     } else {
         toggleInvalid(title, true);
         valid = false;
-        console.log("Title invalid");
     }
 
     if (await validateImageURL(imageURL)) {
         toggleInvalid(imageURL, false);
-        console.log("image valid");
     } else {
         toggleInvalid(imageURL, true);
         valid = false;
-        console.log("Image invalid");
     }
 
     if (validatePrice(price)) {
