@@ -1,8 +1,11 @@
 footer {
     background: $color-black;
     
-    padding: 1.5rem;
+    padding: 1rem;
     margin-top: 150px;
+    display: flex;
+    justify-content: center;
+    gap: 100px;
 
     a {
         color: white;

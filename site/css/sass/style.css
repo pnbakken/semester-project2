@@ -104,7 +104,7 @@ main {
 }
 
 .breadcrumb {
-  width: 100%;
+  width: 90%;
   padding-left: 1rem;
 }
 .breadcrumb a {
@@ -237,6 +237,7 @@ main {
 #product-form {
   display: flex;
   gap: 60px;
+  margin-bottom: 50px;
 }
 @media (max-width: 500px) {
   #product-form {
@@ -273,6 +274,24 @@ main {
 }
 #product-form #delete-product {
   margin-top: 100px;
+}
+
+.message {
+  padding: 1rem;
+  text-align: center;
+}
+
+.error-message {
+  background: #dd6462;
+  color: white;
+}
+
+.warning-message {
+  background: #e9d158;
+}
+
+.success-message {
+  color: #096B72;
 }
 
 .form-control {
@@ -337,8 +356,11 @@ input#search-input {
 
 footer {
   background: #0C1114;
-  padding: 1.5rem;
+  padding: 1rem;
   margin-top: 150px;
+  display: flex;
+  justify-content: center;
+  gap: 100px;
 }
 footer a {
   color: white;

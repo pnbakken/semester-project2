@@ -1,0 +1,17 @@
+.message {
+    padding: 1rem;
+    text-align: center;
+}
+
+.error-message {
+    background: $color-red;
+    color: white;
+}
+
+.warning-message {
+    background: $color-gold;
+}
+
+.success-message {
+    color: $color-green;
+}
