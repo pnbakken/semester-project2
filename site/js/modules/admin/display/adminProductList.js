@@ -11,7 +11,7 @@ export default async function adminProductList() {
     if (products && !products.error) {
         createList(products, productListContainer);
     } else {
-        createMessage(productListContainer, "error", "Could not get list of products");
+        createMessage(productListContainer, "error-message", "Could not get list of products");
     }
 }
 

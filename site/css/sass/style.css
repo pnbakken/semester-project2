@@ -113,6 +113,7 @@ main {
 
 .common-navbar {
   padding: 1.5rem;
+  padding-bottom: 0.25rem;
   margin-bottom: 1rem;
   width: 100%;
   display: flex;
@@ -135,6 +136,15 @@ main {
 }
 .common-navbar .navbar-brand .brand-logo {
   width: 100%;
+}
+.common-navbar .container-fluid {
+  align-items: baseline;
+}
+.common-navbar .container-fluid .mb3 {
+  margin-bottom: none !important;
+}
+.common-navbar .navbar-nav .nav-link {
+  padding: 0;
 }
 .common-navbar .navbar-toggler .navbar-toggler-icon {
   color: #000022;
@@ -213,6 +223,70 @@ main {
 }
 .added-cart .cart-icon {
   background-image: url("../../../../../assets/icon/cart-added.svg");
+}
+
+#login-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+}
+
+.form-control {
+  width: 35%;
+  padding: 2rem;
+}
+@media (max-width: 1024px) {
+  .form-control {
+    width: 50%;
+  }
+}
+@media (max-width: 768px) {
+  .form-control {
+    width: 65%;
+  }
+}
+@media (max-width: 550px) {
+  .form-control {
+    width: 95%;
+  }
+}
+
+input {
+  border: 2px solid #3E1929;
+  border-radius: 0.25rem;
+  padding: 0.2rem;
+}
+
+input#search-input {
+  border-right: none;
+  border-top-left-radius: 0.25rem;
+  border-bottom-left-radius: 0.25rem;
+}
+
+.input-group {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  justify-content: flex-end;
+  width: 100%;
+}
+@media (max-width: 991px) {
+  .input-group {
+    justify-content: flex-start;
+  }
+}
+
+.btn {
+  background: #3E1929;
+  color: white;
+  border: 2px solid #3E1929;
+}
+
+.brand-btn:hover {
+  background: white !important;
+  color: #3E1929 !important;
 }
 
 .invalid-input {

@@ -1,8 +1,11 @@
 import postData from "../../utils/network/postData.js";
 import {baseURL} from "../../utils/network/baseUrl.js";
 import { saveToLocal } from "../../utils/storage/storage.js";
+import createMessage from "../../display/components/common/message.js";
+import clearElement from "../../display/components/common/clearElement.js";
 
     const form = document.querySelector("#login-form");
+    const formMessage = document.querySelector(".form-message");
     const loginURL = baseURL + "/auth/local/"; 
 
     let loginEmail;
@@ -16,8 +19,10 @@ import { saveToLocal } from "../../utils/storage/storage.js";
 
         if (validateLoginForm()) {
             doLogin();
+            clearElement(formMessage);
         } else {
             rejectLogin();
+            createMessage(formMessage, "warning-message", "You must enter email and password");
         }
     })
 
@@ -63,6 +68,8 @@ import { saveToLocal } from "../../utils/storage/storage.js";
         if (!user.error) {
             storeCredentials(user);
             window.location.href = "./admin-panel.html";
+        } else {
+            createMessage(formMessage, "error-message", user.message[0].messages[0].message);
         }
 
         function storeCredentials(user) {

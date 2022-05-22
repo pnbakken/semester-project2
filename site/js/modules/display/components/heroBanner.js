@@ -14,7 +14,7 @@ export default async function heroBanner() {
         buildHeroBanner(heroImage, banner);
     } catch (err) {
         console.error(err);
-        createMessage(banner, "error", "Oops, looks like something went wrong");
+        createMessage(banner, "error-message", "Oops, looks like something went wrong");
     }                        
 }
 

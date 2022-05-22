@@ -20,7 +20,7 @@ function displaySingleProduct(product, target) {
         target.innerHTML = singleProductHTML(product);
         document.querySelector("title").innerText += product.title;
         
-    } else createMessage(target, "error", "Oops, looks like something went wrong");
+    } else createMessage(target, "error-message", "Oops, looks like something went wrong");
     
     function singleProductHTML(product) {
         let html = `<div class="product-image single-image" style="background-image: url('${product.image_url}');"></div>

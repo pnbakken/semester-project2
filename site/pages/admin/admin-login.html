@@ -28,15 +28,20 @@
                     <a class="nav-link" href="../cart.html">Cart</a>
                   </li>
                 </ul>
+                <form class="input-group mb-3" id="search-bar">
+                  <input type="text" class="search-input" placeholder="Search" aria-label="Search" aria-describedby="button-addon2" id="search-input">
+                  <button class="btn btn-outline-secondary" type="button" id="button-addon2 search-button">Go</button>
+                </form>
               </div>
             </div>
           </nav>
     </header>
     <main>
-        <form name="login-form" id="login-form">
+        <form name="login-form" id="login-form" class="form-control">
             <input type="email" placeholder="Enter email" id="login-email"/>
             <input type="password" placeholder="Enter password" id="login-password" />
-            <button class="form-action-button" id="submit-login">Log in</button>
+            <button class="form-action-button btn brand-btn" id="submit-login">Log in</button>
+            <div class="form-message"></div>
         </form>
     </main>
     <footer>

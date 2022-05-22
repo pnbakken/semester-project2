@@ -2,6 +2,7 @@
 
 .common-navbar {
  padding: 1.5rem;
+ padding-bottom: 0.25rem;
  margin-bottom: 1rem;
  width: 100%;
  display: flex;
@@ -20,6 +21,20 @@
         }
         .brand-logo {
             width: 100%;
+        }
+    }
+
+    .container-fluid {
+        align-items: baseline;
+        .mb3 {
+            margin-bottom: none!important;
+        }
+    }
+
+    .navbar-nav {
+        .nav-link {
+
+            padding: 0;
         }
     }
      

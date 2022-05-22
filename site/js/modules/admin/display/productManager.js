@@ -5,6 +5,7 @@ import setBackgroundImage from "../../utils/content/setBackgroundImage.js";
 import attachProductForm, { deleteProduct } from "../product-management/productForm.js";
 import { commonSearch } from "../../utils/content/search/search.js";
 import setBreadcrumb from "../../display/components/common/breadcrumb.js";
+import createMessage from "../../display/components/common/message.js";
 
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
@@ -33,9 +34,13 @@ if (newProduct) {
 
 async function displayEditProduct(id) {
     const product = await getOneProduct(id);
-
-    setBreadcrumb(product.title);
-    populateEditFields(product);
+    if (product) {
+        setBreadcrumb(product.title);
+        populateEditFields(product);
+    } else {
+        createMessage(document.querySelector(".form-message"), "error-message", "Something went wrong, please try again");
+    }
+    
 
     function populateEditFields(product) {
         console.log(product);

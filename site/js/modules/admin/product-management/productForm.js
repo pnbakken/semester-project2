@@ -1,5 +1,6 @@
 // const priceRegex = /^\d*(\.\d{0,2})?$/;
 
+import createMessage from "../../display/components/common/message.js";
 import setBackgroundImage from "../../utils/content/setBackgroundImage.js";
 import { createNewProduct, sendDelete, updateProduct } from "./productActions.js";
 
@@ -67,6 +68,7 @@ async function actionProductForm() {
         }
     } else {
         console.log("form invalid");
+        createMessage(document.querySelector(".form-message"), "error-message", "The form has one or more missing values");
     }
     
     
