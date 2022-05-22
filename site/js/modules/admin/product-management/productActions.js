@@ -18,6 +18,15 @@ export async function createNewProduct(product) {
 
 function handleResult(result) {
     console.log(result);
+
+    let type;
+    let text;
+
+    if (result.error) {
+        type = "error-message";
+        text = result
+    }
+    
 }
 
 async function sendProduct(url, product, method) {
