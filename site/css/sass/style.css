@@ -234,6 +234,12 @@ main {
   gap: 10px;
 }
 
+@media (max-width: 500px) {
+  #product-manager-display {
+    width: 80%;
+  }
+}
+
 #product-form {
   display: flex;
   gap: 60px;

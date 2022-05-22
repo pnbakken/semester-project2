@@ -1,3 +1,9 @@
+#product-manager-display{
+
+    @media(max-width: 500px) {
+        width: 80%;
+    }
+}
 #product-form {
     display: flex;
     gap: 60px;
