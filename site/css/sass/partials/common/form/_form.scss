@@ -1,5 +1,6 @@
 @import "./cart-button";
 @import "./login-form";
+@import "./product-manager-form";
 
 .form-control {
     width: 35%;
@@ -17,7 +18,7 @@
 }
 
 input {
-    border: 2px solid $color-purple;
+    border: 1px solid $color-purple;
     border-radius: 0.25rem;
     padding: 0.2rem;
 }
@@ -30,7 +31,7 @@ input#search-input {
     position: relative;
     display: flex;
     flex-wrap: wrap;
-    align-items: stretch;
+    align-items: baseline;
     justify-content: flex-end;
     width: 100%;
 
@@ -39,7 +40,7 @@ input#search-input {
     }
 }
 
-.btn {
+.brand-btn {
     background: $color-purple;
     color: white;
     border:2px solid $color-purple;

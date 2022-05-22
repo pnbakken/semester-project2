@@ -137,11 +137,8 @@ main {
 .common-navbar .navbar-brand .brand-logo {
   width: 100%;
 }
-.common-navbar .container-fluid {
+.common-navbar .navbar-collapse {
   align-items: baseline;
-}
-.common-navbar .container-fluid .mb3 {
-  margin-bottom: none !important;
 }
 .common-navbar .navbar-nav .nav-link {
   padding: 0;
@@ -232,6 +229,35 @@ main {
   gap: 10px;
 }
 
+#product-form {
+  display: flex;
+  flex-direction: row;
+  gap: 60px;
+}
+#product-form .form-block {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+#product-form .input-label-group {
+  display: flex;
+  flex-direction: column;
+}
+#product-form .product-text {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+#product-form .product-text textarea {
+  height: 200px;
+  border: 1px solid #3E1929;
+}
+#product-form .product-image-group {
+  display: flex;
+  flex-direction: column;
+  gap: 7.5px;
+}
+
 .form-control {
   width: 35%;
   padding: 2rem;
@@ -253,7 +279,7 @@ main {
 }
 
 input {
-  border: 2px solid #3E1929;
+  border: 1px solid #3E1929;
   border-radius: 0.25rem;
   padding: 0.2rem;
 }
@@ -268,7 +294,7 @@ input#search-input {
   position: relative;
   display: flex;
   flex-wrap: wrap;
-  align-items: stretch;
+  align-items: baseline;
   justify-content: flex-end;
   width: 100%;
 }
@@ -278,7 +304,7 @@ input#search-input {
   }
 }
 
-.btn {
+.brand-btn {
   background: #3E1929;
   color: white;
   border: 2px solid #3E1929;

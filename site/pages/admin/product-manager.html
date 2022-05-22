@@ -42,18 +42,40 @@
 
         <div id="product-manager-display">
             <form id="product-form">
-                <input type="text" id="product-title" placeholder="New product title" />
-                <input type="text" id="product-price" placeholder="New product price" />
-                <label for="product-featured">Featured product</label><input type="checkbox" id="product-featured"/>
-                <textarea id="product-description" placeholder="New product description"></textarea>
+              <div class="form-block">
+                <div class="product-text">
+                  <div class="input-label-group">
+                    <label for="product-title">Product title</label>
+                    <input type="text" id="product-title" placeholder="New product title" name="product-title" />
+                  </div>
+                  <div class="input-label-group">
+                    <label for="product-description">Product description</label>
+                    <textarea id="product-description" placeholder="New product description"></textarea>
+                  </div>                 
+                </div>               
+              </div>  
+              <div class="form-block">
+                <div class="input-label-group">
+                  <label for="product-price">Product price</label>
+                  <input type="text" id="product-price" placeholder="New product price" />
+                </div>
+                
+                <div class="checkbox-group">
+                  <label for="product-featured">Featured product</label><input type="checkbox" id="product-featured"/>
+                </div>
                 <div class="product-image-group">
-                    <div id="new-product-image"></div>
+                  <div id="new-product-image"></div>
+                  <div class="input-label-group">
+                    <label for="product-image-url">Product image url</label>
                     <input type="text" id="product-image-url" placeholder="New product image url"/>
-                    <button id="set-image" value="Set image">Set product image</button>
+                    
+                  </div>
+                  <button id="set-image" value="Set image" class="green-bg">Set product image</button>
                 </div>
 
-                <button type="submit" id="submit-product" value="submit product">Submit</button>
+                <button type="submit" id="submit-product" value="submit product" class="brand-btn">Submit</button>
                 <button id="delete-product" value="delete product" style="display: none;">Delete product</button>
+              </div>         
             </form>
             
             <div class="message-box form-message">

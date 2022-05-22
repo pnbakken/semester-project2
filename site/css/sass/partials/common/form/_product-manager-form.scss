@@ -1,0 +1,33 @@
+#product-form {
+    display: flex;
+    flex-direction: row;
+    gap: 60px;
+
+    .form-block {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .input-label-group {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .product-text {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+
+        textarea {
+            height: 200px;
+            border: 1px solid $color-purple;
+        }
+    }
+
+    .product-image-group {
+        display: flex;
+        flex-direction: column;
+        gap: 7.5px;
+    }
+}
