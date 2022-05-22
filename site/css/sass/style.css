@@ -300,7 +300,8 @@ main {
 }
 
 .success-message {
-  color: #096B72;
+  background: #096B72;
+  color: white;
 }
 
 .form-control {

@@ -6,7 +6,6 @@ export async function updateProduct(product, productID) {
     const url = baseURL + "/products/" + productID;
     const method = "PUT";
     const result = await sendProduct(url, product, method)
-    handleResult(result);
 }
 
 export async function createNewProduct(product) {
@@ -34,7 +33,7 @@ async function sendProduct(url, product, method) {
     try {
         const response = await fetch(url, options);
         const result = await response.json();
-        createMessage(document.querySelector(".form-message"), "success-message", "Action succesful");
+        createMessage(document.querySelector(".form-message"), "success-message", "Action successful");
         return result;
     } catch(err) {
         console.error(err);
