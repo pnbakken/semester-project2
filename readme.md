@@ -45,7 +45,7 @@ I'm not looking for contributions at this time
 
 ## Contact
 
-[My website](htts://www.pnbakken.no)
+[My website](https://www.pnbakken.no)
 
 [My LinkedIn page](https://www.linkedin.com/in/p%C3%A5l-bakken-0b2295204/)
 
